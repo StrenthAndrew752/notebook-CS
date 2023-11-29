@@ -23,5 +23,24 @@ Java stars>1000 pushed>2021 language:Java<br>
 - cd.. 上级目录
 - cd \ 跟目录
 - 垃圾回收机制（GC）
-- ke移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
+- 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
+- java加载和运行
+-  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
+   
+-  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台
 -  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
