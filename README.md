@@ -14,3 +14,14 @@ Java stars>1000 pushed>2021 language:Java<br>
 - java并发编程 黑马 **
 - Springcloud 黑马
 - Redis 黑马（结合缓存项目）
+# JavaSE-java EE
+- program files(X86) 32位
+- DOS命令
+- 
+- dir
+- cd Desktop （change direcroty）
+- cd.. 上级目录
+- cd \ 跟目录
+- 垃圾回收机制（GC）
+- ke移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
+-  
