@@ -17,7 +17,6 @@ Java stars>1000 pushed>2021 language:Java<br>
 # JavaSE-java EE
 - program files(X86) 32位
 - DOS命令
-- 
 - dir
 - cd Desktop （change direcroty）
 - cd.. 上级目录
@@ -28,7 +27,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
    
 -  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台
--  
+-   
   
 
 
