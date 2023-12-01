@@ -65,8 +65,8 @@ Java stars>1000 pushed>2021 language:Java<br>
   int housePrice,a,b；a并未初始化也并未开辟空间
   housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
 - 数据类型 指导程序运行阶段分配多少空间
-- 作用域 变量的有效范围 同作用域只能有一个变量
-  局部变量 方法体中声明
+- 作用域 变量的有效范围 同作用域只能有一个变量  
+  局部变量 方法体中声明  
   成员变量 方法体外类体内声明
 - 
   
