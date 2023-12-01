@@ -51,9 +51,25 @@ Java stars>1000 pushed>2021 language:Java<br>
         classA{
           public static void main(String[] args){
             System.out.println("run this main");
-            } 
-        }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
-  - 
+          } 
+  }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
+
+  - 标识符\可以自己命名 数字字母_$,不以数字开头  
+    类名、方法（main）、常量、接口
+    命名规范：类名 接口名  首大写 后单词大写
+    变量名 方法名 首小写 后单词大写
+    常量名 全部大写
+- 关键字
+- 字面值(数据) 字符串型字面值 "" 字符型'' 整数 浮点 布尔
+- 变量 命名一块空间，包含数据类型 名称 字面值 （类型 字面值一致）
+  int housePrice,a,b；a并未初始化也并未开辟空间
+  housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
+- 数据类型 指导程序运行阶段分配多少空间
+- 作用域 变量的有效范围 同作用域只能有一个变量
+  局部变量 方法体中声明
+  成员变量 方法体外类体内声明
+- 
+  
 
 
 
