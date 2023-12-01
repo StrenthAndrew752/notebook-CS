@@ -41,12 +41,15 @@ Java stars>1000 pushed>2021 language:Java<br>
                *  
                   */ 通过javadoc.exe生成帮助文档
 
-        public class HelloWorld{
-          public static void main(String[] args){//main 方法名
-            System.out.println("Hello World!")
+        public class HelloWorld{//类体中不直接写java
+          public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口)
+            System.out.println("Hello World!");//方法体
+            System.out.println("I am Andrew");  
           }
    }
-      
+    classA{
+    }
+- 
 
 
 
