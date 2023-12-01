@@ -42,10 +42,11 @@ Java stars>1000 pushed>2021 language:Java<br>
                   */ 通过javadoc.exe生成帮助文档
 
         public class HelloWorld{
-          public static void main(string[] args){//main 方法名
-            system.out.println("Hello World!")
+          public static void main(String[] args){//main 方法名
+            System.out.println("Hello World!")
           }
-      }
+   }
+      
 
 
 
