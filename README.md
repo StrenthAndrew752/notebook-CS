@@ -32,7 +32,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   exit
   
   del *class
-- 垃圾回收机制（GC）
+- 垃圾回收机制（GC）     
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
