@@ -29,14 +29,13 @@ Java stars>1000 pushed>2021 language:Java<br>
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
-   
--  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台
+-  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 -  JRE(包括JVM)  java runtime envoronment 运行环境（运行JDK）
 -  JDK目录
--  java/bin :存放命令 包括javac java.exe
--  Windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
+  java/bin :存放命令 包括javac java.exe  
+  Windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
 -  注释 只在源文件不会被编译到字节码
--  单行 //
+  单行 //
 -  多行 /* */
 -  javadoc注释 /**
 -               *
