@@ -45,12 +45,15 @@ Java stars>1000 pushed>2021 language:Java<br>
           public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口)
             System.out.println("Hello World!");//方法体
             System.out.println("I am Andrew");  
-          }
+          }//公开的类名必须和源文件一致
    }
 
         classA{
-        }
-- 
+          public static void main(String[] args){
+            System.out.println("run this main");
+            } 
+        }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
+  - 
 
 
 
