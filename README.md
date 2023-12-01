@@ -18,13 +18,13 @@ Java stars>1000 pushed>2021 language:Java<br>
 - program files(X86) 32位
 - DOS命令
 - dir
-- cd Desktop （change direcroty）
-- cd.. 上级目录
-- cd \ 跟目录
-- cls
-- java -version
-- exit
-- del *class
+  cd Desktop （change direcroty）
+  cd.. 上级目录
+  cd \ 跟目录
+  cls
+  java -version
+  exit
+  del *class
 - 垃圾回收机制（GC）
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
@@ -46,9 +46,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 -       system.out.println("Hello World!")
 -   }
 - }
-1
 
-2
 
 
 
