@@ -64,11 +64,22 @@ Java stars>1000 pushed>2021 language:Java<br>
 - 变量 命名一块空间，包含数据类型 名称 字面值 （类型 字面值一致）
   int housePrice,a,b；a并未初始化也并未开辟空间
   housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
-- 数据类型 指导程序运行阶段分配多少空间
 - 作用域 变量的有效范围 同作用域只能有一个变量  
   局部变量 方法体中声明  
-  成员变量 方法体外类体内声明
+  成员变量 方法体外类体内声明 就近原则
+- 数据类型 指导程序运行阶段分配多少空间
+  常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
+  
+  引用数据类型 类 接口 数组 (字符串)
+- 1byte(字节) = 8 bit(字节位) 1KB = 8byte 第一位表正负
+- ASCII码 字符码 二进制表示文字(单字节编码)  文字表二进制 编码
+  'a' --> [0110 0001] 97
+  'A' --> 65
+  '0' --> 48
+- 简中编码 GB2312 < GBK < GB18030
+- 统一所有 unicode utf-8（.） utf-16 utf-32 java标识符可以用中文 public class 学生{}
 - 
+  
   
 
 
