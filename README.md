@@ -50,7 +50,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 
         classA{
           public static void main(String[] args){
-            System.out.println("run this main");
+            System.out.println("run this main");//println换行 print不换
           } 
   }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
 
@@ -78,7 +78,14 @@ Java stars>1000 pushed>2021 language:Java<br>
   '0' --> 48
 - 简中编码 GB2312 < GBK < GB18030
 - 统一所有 unicode utf-8（.） utf-16 utf-32 java标识符可以用中文 public class 学生{}
+- char K = '我' 双字节可存储中文
+- 转义字符
+  char c2 = '\n' 换行符  '\t'制表符
+  char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
+- jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
 - 
+- 
+  
   
   
 
