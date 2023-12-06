@@ -80,8 +80,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 - 统一所有 unicode utf-8（.） utf-16 utf-32 java标识符可以用中文 public class 学生{}
 - char K = '我' 双字节可存储中文
 - 转义字符
-  char c2 = '\n' 换行符  '\t'制表符
-  
+  char c2 = '\n' 换行符  '\t'制表符<br>
   char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
 - jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
 - 
