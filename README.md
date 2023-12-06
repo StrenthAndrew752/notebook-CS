@@ -29,6 +29,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
+-  编译只检查语法不运算 byte b = i（int 10） / 3 (错) 
 -  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 -  JRE(包括JVM)  java runtime envoronment 运行环境（运行JDK）
 -  JDK目录
@@ -69,11 +70,19 @@ Java stars>1000 pushed>2021 language:Java<br>
   成员变量 方法体外类体内声明 就近原则
 - 数据类型 指导程序运行阶段分配多少空间
   常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
-##取值范围  补码
+## 取值范围  源码补码反码
+- 以补码存储
+- 正数补码相同 负数将正数取反+1
+- int 2147483647
+- 补码 1000000
+- 减一 01111111
+- 反码 10000000 —— -128
+- 
+
   
   引用数据类型   类 接口 数组 (字符串)
 - 1byte(字节) = 8 bit(字节位) 1KB = 8byte 第一位表正负
-- ASCII码 字符码 二进制表示文字(单字节编码)  文字表二进制 编码
+- ASCII码 字符码 二进制表示文字(单字节编码)  文字表二进制 编 码
   'a' --> [0110 0001] 97
   'A' --> 65
   '0' --> 48
@@ -84,18 +93,51 @@ Java stars>1000 pushed>2021 language:Java<br>
   char c2 = '\n' 换行符  '\t'制表符<br>
   char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
 - jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
-- 整数型
-- int a = 10;
+- 整数型 byte short int long
+- int a = 10; 10默认int
+- int a = 10 / 3; 整数/整数=证书
 - int b = 010; //8进制
 - int c = 0x10; //16进制
 - system.out.println(c);
-- 
+- long z = 2147483648L //整数型字面值默认为int类型处理 添加L作为long 自动类型转换-小容量转换为大容量 int-long
+- 大容量-小容量 强制类型转换符 强制删去左侧二进制位
+- Long x = 100;
+- int y = (int)x;
+- byte b = 50； byte不超过127可以不用强制类型转换符  包括short char
+- 浮点型 float double 存储近似值 
+- 引用数据类型 java.math.BigDecimal
+- double d = 3.0; 浮点型默认float
+- float f = 3.0f;   float f = (float)3.0;
+- 布尔型 boolean
+- 只有 true false 两个值 底层用01存储
+- boolean login = true;
+- 互相转换
+- 除bool都能互相转换 char c = 97;
+- 任意浮点型都比整数型容量大
+- 多种数据类型混合运算 先转换成容量最大的类型再运算
+# 运算符
+- 算数运算符 + - * / %(取余) ++(自加一) --
+- 优先级 加()
+- ++x/x++ 单目运算符
+- int b = a ++ 先赋值 再a+1
+- int b = ++ a 先➕1再赋值
+- system.out.println(s--);  x=s-- 打印s
+- 关系运算符 > >= == !=       =是赋值运算符
+- 运算结果bool型
+- 逻辑运算符
+- & | !(单目 !false) ^(异或 两边算子不一样就是真) &&(短路与 和与结果相同但存在短路现象) ||(短路或)
+- 两边算子bool，最终结果bool
+- system.oyt.println((5 > 3) | (5 > 6)); //true
+- int x = 10;
+- int Y = 8;
+- system.out.println( x < Y && ++x < Y); //短路与 第一个出现false则短路
+- system.out.println(X); // 10
 - 
   
   
   
 
-
+ >
 
 
 
