@@ -81,6 +81,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 - char K = '我' 双字节可存储中文
 - 转义字符
   char c2 = '\n' 换行符  '\t'制表符
+  
   char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
 - jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
 - 
