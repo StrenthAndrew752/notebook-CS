@@ -69,8 +69,9 @@ Java stars>1000 pushed>2021 language:Java<br>
   成员变量 方法体外类体内声明 就近原则
 - 数据类型 指导程序运行阶段分配多少空间
   常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
+##取值范围  补码
   
-  引用数据类型 类 接口 数组 (字符串)
+  引用数据类型   类 接口 数组 (字符串)
 - 1byte(字节) = 8 bit(字节位) 1KB = 8byte 第一位表正负
 - ASCII码 字符码 二进制表示文字(单字节编码)  文字表二进制 编码
   'a' --> [0110 0001] 97
@@ -79,10 +80,15 @@ Java stars>1000 pushed>2021 language:Java<br>
 - 简中编码 GB2312 < GBK < GB18030
 - 统一所有 unicode utf-8（.） utf-16 utf-32 java标识符可以用中文 public class 学生{}
 - char K = '我' 双字节可存储中文
-- 转义字符
+- 转义字符\
   char c2 = '\n' 换行符  '\t'制表符<br>
   char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
 - jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
+- 整数型
+- int a = 10;
+- int b = 010; //8进制
+- int c = 0x10; //16进制
+- system.out.println(c);
 - 
 - 
   
