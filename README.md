@@ -144,7 +144,7 @@ Java stars>1000 pushed>2021 language:Java<br>
         {
           public static void main(String[] args){
 
-}
+          }
         }
   
   
