@@ -67,7 +67,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
 - 作用域 变量的有效范围 同作用域只能有一个变量  
   局部变量 方法体中声明  
-  成员变量 方法体外类体内声明 就近原则
+  成员变量 方法体外类体内声明 就近原则 有默认值
 - 数据类型 指导程序运行阶段分配多少空间
   常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
 ## 取值范围  源码补码反码
@@ -83,7 +83,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   引用数据类型   类 接口 数组 (字符串)
 - 1byte(字节) = 8 bit(字节位) 1KB = 8byte 第一位表正负
 - ASCII码 字符码 用二进制表示文字（解码）  文字表二进制 (编码)
-  'a' --> 97 [0110 0001] 按照ASCII 解码
+  'a' --> 97 按照ASCII 解码 [0110 0001]
   'A' --> 65
   '0' --> 48
 - 简中编码 GB2312 < GBK < GB18030
@@ -106,15 +106,18 @@ Java stars>1000 pushed>2021 language:Java<br>
 - byte b = 50； byte不超过127可以不用强制类型转换符  包括short char
 - 浮点型 float double 存储近似值 
 - 引用数据类型 java.math.BigDecimal
+- Java SE 类库 jre\lib\rt.jar
+- 类库源码 src.zip
 - double d = 3.0; 浮点型默认float
 - float f = 3.0f;   float f = (float)3.0;
 - 布尔型 boolean
 - 只有 true false 两个值 底层用01存储
 - boolean login = true;
 - 互相转换
-- 除bool都能互相转换 char c = 97;
+- 除bool数据类型都能互相转换 char c = 97;
 - 任意浮点型都比整数型容量大
 - 多种数据类型混合运算 先转换成容量最大的类型再运算
+- byte short char 先转换成int运算
 # 运算符
 - 算数运算符 + - * / %(取余) ++(自加一) --
 - 优先级 加()
@@ -122,17 +125,28 @@ Java stars>1000 pushed>2021 language:Java<br>
 - int b = a ++ 先赋值 再a+1
 - int b = ++ a 先➕1再赋值
 - system.out.println(s--);  x=s-- 打印s
-- 关系运算符 > >= == !=       =是赋值运算符
-- 运算结果bool型
-- 逻辑运算符
+- 关系运算符 > >= == !=       =是赋值运算符<br>
+  运算结果bool型
+- 逻辑(bool)运算符
 - & | !(单目 !false) ^(异或 两边算子不一样就是真) &&(短路与 和与结果相同但存在短路现象) ||(短路或)
 - 两边算子bool，最终结果bool
 - system.oyt.println((5 > 3) | (5 > 6)); //true
 - int x = 10;
 - int Y = 8;
-- system.out.println( x < Y && ++x < Y); //短路与 第一个出现false则短路
+- system.out.println( x < Y && ++x < Y); //短路与 第一个出现false则第二个表达式不执行
+- 两边算子都要执行要用逻辑与
 - system.out.println(X); // 10
-- 
+- || 短路或
+## 赋值运算符
+- 基本运算符 =
+
+        public class Trial
+        {
+          public static void main(String[] args){
+
+}
+        }
+  
   
   
   
