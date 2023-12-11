@@ -138,14 +138,19 @@ Java stars>1000 pushed>2021 language:Java<br>
 - system.out.println(X); // 10
 - || 短路或
 ## 赋值运算符
-- 基本运算符 =
+- 基本赋值运算符 =
+- +=(累进)  /=  %=(取余)
+- byte x =10;
+- x += 5;  //等同于x = (byte)(x+5) 不等于x = x + 5(int 赋值到 byte 不通过)
+## 字符串连接运算符 +
+- +两边是数字 加法运算
+- +两边有一个字符串 字符串连接 返回字符串结果
+- system.out.println(a "+"+b+"="+(a+b));
+## 三元运算符
+- char c = bool? 表达式1 :表达式2； c的类型和表达式类型一致
+## 控制语句
+- 
 
-        public class Trial
-        {
-          public static void main(String[] args){
-
-          }
-        }
   
   
   
