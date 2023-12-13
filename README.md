@@ -67,7 +67,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
 - 作用域 变量的有效范围 同作用域只能有一个变量  
   局部变量 方法体中声明  
-  成员变量 方法体外类体内声明 就近原则 有默认值
+  成员变量 方法体外**类体**内声明 就近原则 有默认值
 - 数据类型 指导程序运行阶段分配多少空间
   常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
 ## 取值范围  源码补码反码
@@ -164,6 +164,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   }else if{
   }else{
   };<br>
+- else if一个分支执行剩下的不执行  全是if分支全部执行
   
           public class IfTest01
           {
@@ -174,8 +175,23 @@ Java stars>1000 pushed>2021 language:Java<br>
               }
             }
           }
+- 
+        public class Keyinputtest
+        {
+          public static void main(String[] args){
 
+            //第一步 创建键盘扫描器对象
+            java.util.Scanner s = new java.util.Scanner(System.in);
 
+            //第二步 调用Scanner对象的next方法开始接收用户的键盘输入
+            //当程序执行到这里时会停下，等待用户输入
+            //用户敲下回车键，输入的信息赋值给userInputContent
+            String userInputContent = s.next();
+            //将内存中的数据输出到控制台
+            System.out.println(“您输入了: ” + userInputConetnt);
+
+          }
+        }
 
 - 控制循环结构
 - for while do while
