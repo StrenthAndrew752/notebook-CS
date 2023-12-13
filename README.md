@@ -169,9 +169,8 @@ Java stars>1000 pushed>2021 language:Java<br>
             public static void main(Stringp[) args{
               double distance = 1.0;//单位KM
               if( distance < 5){
-                System.println("去KFC")
+                System.println("去KFC");
               }
-  
             }
           }
 
