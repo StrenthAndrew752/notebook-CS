@@ -164,16 +164,16 @@ Java stars>1000 pushed>2021 language:Java<br>
   }else if{
   }else{
   };
-        public class IfTest01
-        {
-          public static void main(Stringp[) args{
-            double distance = 1.0;//单位KM
-            if( distance < 5){
-              System.println("去KFC")
-            }
+          public class IfTest01
+          {
+            public static void main(Stringp[) args{
+              double distance = 1.0;//单位KM
+              if( distance < 5){
+                System.println("去KFC")
+              }
   
+            }
           }
-        }
 
 
 
