@@ -147,8 +147,40 @@ Java stars>1000 pushed>2021 language:Java<br>
 - +两边有一个字符串 字符串连接 返回字符串结果
 - system.out.println(a "+"+b+"="+(a+b));
 ## 三元运算符
-- char c = bool? 表达式1 :表达式2； c的类型和表达式类型一致
+- char c = bool表达式 ? 表达式1 : 表达式2； c的类型和表达式类型一致
+- boolen sex = false;
+- char c = sex ? '男' : '女'；
 ## 控制语句
+- 控制选择结构
+- if、if else
+- swich
+- if(bool表达式){
+  };
+- if(bool表达式){
+  }else{
+  };
+- if(bool表达式){
+  }else if{
+  }else if{
+  }else{
+  };
+        public class IfTest01
+        {
+          public static void main(Stringp[) args{
+            double distance = 1.0;//单位KM
+            if( distance < 5){
+              System.println("去KFC")
+            }
+  
+          }
+        }
+
+
+
+- 控制循环结构
+- for while do while
+- 控制循环结构
+- break continue
 - 
 
   
