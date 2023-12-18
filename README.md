@@ -175,8 +175,7 @@ Java stars>1000 pushed>2021 language:Java<br>
               }
             }
           }
-- 
-‘’‘java
+~~~java
 public class Keyinputtest
 {
   public static void main(String[] args){
@@ -207,7 +206,7 @@ public class Keyinputtest
   
   }
 }
-’‘’
+~~~
 
 - 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
 - 第二步：string str = s.next();  int num = s.nextInt();
