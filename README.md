@@ -224,7 +224,7 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 - 第二步：string str = s.next();  int num = s.nextInt();
 
 - swich
-  //也可以是byute short char 因为可以自动类型转换
+也可以是byute short char 因为可以自动类型转换
     switch(**int/string**){
       case i:
         java语句；
