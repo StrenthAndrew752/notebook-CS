@@ -178,7 +178,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 ‘’‘java
 public class Keyinputtest
 {
-public static void main(String[] args){
+  public static void main(String[] args){
 
   //第一步 创建键盘扫描器对象s
   java.util.Scanner s = new java.util.Scanner(System.in);
