@@ -71,17 +71,17 @@ SUN提前设置 全小写
   housePrice = 1；//运算右边赋值左边   int housePrice = 1；获取(get) 修改(set)
 - 作用域 变量的有效范围 同作用域只能有一个变量  
   局部变量 方法体中声明  
-  成员变量 方法体外**类体**内声明 **就近原则** 有默认值(0) 
+  成员变量 方法体外**类体**内声明 **就近原则** 有默认值(0) char-\u0000(\u0020是空格)
 ## 数据类型 指导程序运行阶段分配多少空间
-  常用数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
-## 取值范围  源码补码反码
+  基本数据类型 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte
+- 取值范围  源码补码反码
 - 以补码存储
 - 正数补码相同 负数将正数取反+1
 - int 2147483647
 - 补码 1000000
 - 减一 01111111
 - 反码 10000000 —— -128
-- 
+
 
   
   引用数据类型   类 接口 数组 (字符串)
@@ -99,7 +99,8 @@ SUN提前设置 全小写
 - jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
 - 整数型 byte short int long
 - int a = 10; 10默认int
-- int a = 10 / 3; 整数/整数=证书
+- 三种表示方式
+- int a = 10 / 3; 整数/整数=整数
 - int b = 010; //8进制
 - int c = 0x10; //16进制
 - system.out.println(c);
@@ -117,7 +118,7 @@ SUN提前设置 全小写
 - 布尔型 boolean
 - 只有 true false 两个值 底层用01存储
 - boolean login = true;
-- 互相转换
+- 转换规则
 - 除bool数据类型都能互相转换 char c = 97;
 - 任意浮点型都比整数型容量大
 - 多种数据类型混合运算 先转换成容量最大的类型再运算
@@ -143,6 +144,7 @@ SUN提前设置 全小写
 - || 短路或
 ## 赋值运算符
 - 基本赋值运算符 =
+- 扩展运算符 不改变运算结果类型
 - +=(累进)  /=  %=(取余)
 - byte x =10;
 - x += 5;  //等同于x = (byte)(x+5) 不等于x = x + 5(int 赋值到 byte 不通过)
@@ -150,14 +152,14 @@ SUN提前设置 全小写
 - +两边是数字 加法运算
 - +两边有一个字符串 字符串连接 返回字符串结果
 - system.out.println(a "+"+b+"="+(a+b));
-## 三元运算符
+## 三元(条件)运算符
 - char c = bool表达式 ? 表达式1 : 表达式2； c的类型和表达式类型一致
 - boolen sex = false;
 - char c = sex ? '男' : '女'；
 ## 控制语句
-- 控制选择结构
+## 选择结构
 - if、if else
-- swich
+
 - if(bool表达式){
   };
 - if(bool表达式){
@@ -220,9 +222,27 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 
 - 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
 - 第二步：string str = s.next();  int num = s.nextInt();
-- 控制循环结构
-- for while do while
-- 控制循环结构
+
+- swich
+  //也可以是byute short char 因为可以自动类型转换
+    switch(**int/string**){
+      case i:
+        java语句；
+        break；//到break终止 没有break直接进行下一个分支执行(不匹配 case穿透)
+      default :
+        java语句；//都不匹配 default
+    }
+- case 可以合并
+    int i  = 10;
+    switch(i){
+      case 1 : case 2: case 3:
+      system.out.println("hw");
+    }
+- 
+## 循环结构
+- for | while | do while
+- 
+## 控制循环语句
 - break continue
 
 
