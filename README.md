@@ -181,25 +181,25 @@ public class Keyinputtest
   public static void main(String[] args){
 
   //第一步 创建键盘扫描器对象s
-  java.util.Scanner s = new java.util.Scanner(System.in);
+    java.util.Scanner s = new java.util.Scanner(System.in);
 
   //给出提示
-  system.out.print("请输入你的年龄：");
+    system.out.print("请输入你的年龄：");
 
   //第二步 调用Scanner对象的next方法开始接收用户的键盘输入
   //当程序执行到这里时会停下，等待用户输入
   //用户敲下回车键，输入的信息赋值给userInputContent
-  String userInputContent = s.next();
+    String userInputContent = s.next();
   //以字符串的形式接受
-  int age = s.nextInt();//以整数的形式接收
+    int age = s.nextInt();//以整数的形式接收
   
   //判断年龄 幼儿少年 青少年 青年 中年
-  String str = "老年";
-  if(age < 0 || age > 150){
-    str = "年龄不合法";
-  }else if(age <= 5){
-    str = "幼儿"；
-  }else of(age <= 35){
+    String str = "老年";
+    if(age < 0 || age > 150){
+      str = "年龄不合法";
+    }else if(age <= 5){
+      str = "幼儿"；
+    }else of(age <= 35){
     str = "青年"；
   }
   System.out.pringln(str);
