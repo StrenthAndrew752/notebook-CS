@@ -176,25 +176,27 @@ Java stars>1000 pushed>2021 language:Java<br>
             }
           }
 - 
-        public class Keyinputtest
-        {
-          public static void main(String[] args){
+public class Keyinputtest
+{
+public static void main(String[] args){
 
-            //第一步 创建键盘扫描器对象s
-            java.util.Scanner s = new java.util.Scanner(System.in);
+  //第一步 创建键盘扫描器对象s
+  java.util.Scanner s = new java.util.Scanner(System.in);
 
-            //第二步 调用Scanner对象的next方法开始接收用户的键盘输入
-            //当程序执行到这里时会停下，等待用户输入
-            //用户敲下回车键，输入的信息赋值给userInputContent
-            String userInputContent = s.next();
-            //以字符串的形式接受
-            int num = s.nextInt();//以整数的形式接收
+          
+
+  //第二步 调用Scanner对象的next方法开始接收用户的键盘输入
+  //当程序执行到这里时会停下，等待用户输入
+  //用户敲下回车键，输入的信息赋值给userInputContent
+  String userInputContent = s.next();
+  //以字符串的形式接受
+  int num = s.nextInt();//以整数的形式接收
   
-            //将内存中的数据输出到控制台
-            System.out.println(“您输入了: ” + userInputConetnt);
+  //将内存中的数据输出到控制台
+  System.out.println(“您输入了: ” + userInputConetnt);
 
-          }
-        }
+  }
+}
 - 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
 - 第二步：string str = s.next();  int num = s.nextInt();
 - 控制循环结构
@@ -211,9 +213,6 @@ public class A1
 }
 ~~~
 
-【运算符】
-算术运算符
-123
 
 
 
