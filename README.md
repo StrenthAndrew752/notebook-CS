@@ -207,6 +207,7 @@ public class Keyinputtest
   }
 }
 ’‘’
+
 - 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
 - 第二步：string str = s.next();  int num = s.nextInt();
 - 控制循环结构
