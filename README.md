@@ -55,7 +55,8 @@ Java stars>1000 pushed>2021 language:Java<br>
           } 
   }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
 
-  - 标识符\可以自己命名 数字字母_$,不以数字开头  
+## 标识符
+    可以自己命名 数字字母_$,不以数字开头  
     类名、方法（main）、常量、接口
     命名规范：类名 接口名  首大写 后单词大写
     变量名 方法名 首小写 后单词大写
@@ -199,7 +200,7 @@ public class Keyinputtest
       str = "年龄不合法";
     }else if(age <= 5){
       str = "幼儿"；
-    }else of(age <= 35){
+    }else if(ag  e <= 35){
     str = "青年"；
   }
   System.out.pringln(str);
@@ -207,6 +208,12 @@ public class Keyinputtest
   }
 }
 ~~~
+- if中一条语句不加大括号 可以只有if,没有else 不能相反
+~~~
+boolean sex = true;
+if(sex) System.out.println("男"); else System.out.println("女")；
+~~~
+
 
 - 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
 - 第二步：string str = s.next();  int num = s.nextInt();
