@@ -172,16 +172,17 @@ SUN提前设置 全小写
   }else{
   };<br>
 - else if一个分支执行剩下的不执行  全是if分支全部执行
-  
-  public class IfTest01
-  {
-    public static void main(Stringp[]) args{
-      double distance = 1.0;//单位KM
-      if( distance < 5){
-        System.println("去KFC");
-      }
+~~~
+public class IfTest01
+{
+  public static void main(Stringp[]) args{
+    double distance = 1.0;//单位KM
+    if( distance < 5){
+      System.println("去KFC");     
     }
   }
+}
+~~~
 ~~~java
 public class Keyinputtest
 {
