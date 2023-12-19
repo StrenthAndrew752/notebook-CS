@@ -233,7 +233,7 @@ if(sex) System.out.println("男"); else System.out.println("女")；
       default :
         java语句；//都不匹配 default
     }
-- case 可以合并<br>
+- case 可以合并 <br>
     int i  = 10;
     switch(i){
       case 1 : case 2: case 3:
