@@ -16,6 +16,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 - Redis 黑马（结合缓存项目）
 # JavaSE-java EE
 ### 标识符-运算符 p55
+### 
 - program files(X86) 32位
 - DOS命令
 - dir  
@@ -226,23 +227,36 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 - 第二步：string str = s.next();  int num = s.nextInt();
 
 ## swich
-    //也可以是byute short char 因为可以自动类型转换
-    switch(**int/string**){
+    switch(int/string){//也可以是byute short char 因为可以自动类型转换
       case i:
         java语句；
-        break；//到break终止 没有break直接进行下一个分支执行(不匹配 case穿透)
+        break；//到break终止 没有break直接进行下一个分支执行(不进行匹配，case穿透)
       default :
-        java语句；//都不匹配 default
+        java语句；//都不匹配则default
     }
-- case 可以合并 <br>
+### case 可以合并
     int i  = 10;
     switch(i){
-      case 1 : case 2: case 3:
+      case 1 : case 2: case 10；:
       system.out.println("hw");
     }
 - 
 ## 循环结构
 - for | while | do while
+- 循环体(要反复执行的代码) 计算器
+'''
+for(初始化表达式；布尔表达式；更新表达式){
+  循环体；
+}
+初始化表达式(仅一次)-bool(true-循环体-更新 false-结束)
+public static void main(String[] args){
+  int i;先定义再声明
+  for(i = 1; i<=10; i++){
+    System.out.println(i);
+  }
+  System.out.println(i);//i的作用域
+}
+'''
 - 
 ## 控制循环语句
 - break continue
