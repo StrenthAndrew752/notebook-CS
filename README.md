@@ -244,8 +244,7 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 ## 循环结构
 - for | while | do while
 - 循环体(要反复执行的代码) 计算器
-- 
-'''
+～～～
 for(初始化表达式；布尔表达式；更新表达式){
   循环体；
 }
@@ -257,7 +256,7 @@ public static void main(String[] args){
   }
   System.out.println(i);//i的作用域
 }
-'''
+～～～
 - 
 ## 控制循环语句
 - break continue
