@@ -131,7 +131,7 @@ SUN提前设置 全小写
 - ++x/x++ 单目运算符
 - int b = a ++ 先赋值 再a+1
 - int b = ++ a 先➕1再赋值
-- system.out.println(s--);  x=s-- 打印s
+- system.out.println(s--);  x=s-- 打印s再s=s-1
 - 关系运算符 > >= == !=       =是赋值运算符<br>
   运算结果bool型
 - 逻辑(bool)运算符
@@ -244,6 +244,7 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 ## 循环结构
 - for | while | do while
 - 循环体(要反复执行的代码) 计算器
+### 变量的作用域
 - 
 ~~~
 for(初始化表达式；布尔表达式；更新表达式){
@@ -251,16 +252,44 @@ for(初始化表达式；布尔表达式；更新表达式){
 }
 初始化表达式(仅一次)-bool(true-循环体-更新 false-结束)
 public static void main(String[] args){
-  int i;先定义再声明
+  int i; //先定义再声明
   for(i = 1; i<=10; i++){
     System.out.println(i);
   }
-  System.out.println(i);//i的作用域
+  System.out.println(i);//i的作用域，此时是11
 }
 ~~~
-- 
+- for + if 找出1-100的奇数
+## while
+~~~
+while(bool表达式){
+  循环体；
+}
+while(true){}//死循环
+do{
+  循环体；
+}while(bool); //注意封号
+~~~
 ## 控制循环语句
 - break continue
+- 关键字+封号构成java语句
+- break 终止switch语句/循环语句 跳出最内层的循环
+- for+break 找质数
+- continue 表示更新表达式跳到下一次循环
+### continue + 循环名称（了解）
+## 方法 method/function(c)
+- 代码复用 调用 invoke
+- 定义在类体中
+- 【修饰符列表】 返回值类型 方法名（形参列表）{
+方法体；
+}
+### 修饰符 public static
+- 含static 调用 类名.方法名(实参) 定义方法时不执行，调用时执行
+- 不返回任何数据是void可以return;（此时所在方法结束） 否则return A；
+- 形参 局部变量 逗号相隔 主要的是数据类型不是形参名字
+- 实参 调用方法时传递的真实数据 和形参必须数量 类型相同
+- 
+- 
 
 
 
