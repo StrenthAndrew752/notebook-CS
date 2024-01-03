@@ -44,8 +44,8 @@ Java stars>1000 pushed>2021 language:Java<br>
                *  
                   */ 通过javadoc.exe生成帮助文档
 
-        public class HelloWorld{//类体中不直接写java
-          public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口)
+        public class HelloWorld{//类体中不直接写java 除声明变量外
+          public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口) string[]是一种饮用数据类型 args是局部变量，可以随意命名
             System.out.println("Hello World!");//方法体
             System.out.println("I am Andrew");  
           }//公开的类名必须和源文件一致
@@ -281,16 +281,15 @@ do{
 ## 方法 method/function(c)
 - 代码复用 调用 invoke
 - 定义在类体中
-- 【修饰符列表】 返回值类型 方法名（形参列表）{
-方法体；
-}
+- 【修饰符列表】 返回值类型 方法名（形参列表）{方法体;}
+- 
 ### 修饰符 public static
-- 含static 调用 类名.方法名(实参) 定义方法时不执行，调用时执行
-- 不返回任何数据是void可以return;（此时所在方法结束） 否则return A；
+- 含static时 调用 类名.方法名(实参) 定义方法时不执行，调用时执行
+- 不返回任何数据是void可以return;（此时所在方法结束） 否则return A(返回值类型，8种)；
 - 形参 局部变量 逗号相隔 重要的是数据类型不是形参名字
 - 实参 调用方法时传递的真实数据 和形参必须数量 类型相同
-- 
-- 
+- 公开的类名和源文件名相同 类体内不直接写java语句
+- 85 jvm
 
 
 
