@@ -274,7 +274,8 @@ do{
 - break continue
 - 关键字+封号构成java语句
 - break 终止switch语句/循环语句 跳出最内层的循环
-- for+break 找质数
+- for+if+break 找质数
+- break 结束所在循环
 - continue 表示更新表达式跳到下一次循环
 ### continue + 循环名称（了解）
 ## 方法 method/function(c)
