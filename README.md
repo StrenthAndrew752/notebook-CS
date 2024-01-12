@@ -323,6 +323,7 @@ public static void sumN(int n){
   return n + sum(n-1);
 }
 ~~~
+![递归方法调用内存图](/pic/递归1.png)
 - 
 
 
