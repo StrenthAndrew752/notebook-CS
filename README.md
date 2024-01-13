@@ -357,7 +357,7 @@ public static void sumN(int n){
 - 不影响下一次调用对象 成员变量中的实例变量在堆内存的java对象内部存储
 ![对象内存图](/pic/类和对象.png "对象")
 - u.address.city
-- 
+- ![引用](/pic/类2.png "引用详解")
 
 
 
