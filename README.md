@@ -359,7 +359,7 @@ public static void sumN(int n){
 - u.address.city
 - ![引用](/pic/类2.png "引用详解")
 ### JVMM内存管理
-
+- ![JVM内存管理](/pic/JVM内存管理.png "内存")
 
 
 
