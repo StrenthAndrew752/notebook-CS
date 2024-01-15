@@ -42,7 +42,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   多行 /* */  
   javadoc注释 /**  
                *  
-                  */ 通过javadoc.exe生成帮助文档
+                  */ 通过javadoc.exe生成帮助文档 鼠标停留有信息
 
         public class HelloWorld{//类体中不直接写java 除声明变量外
           public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口) string[]是一种饮用数据类型 args是局部变量，可以随意命名
@@ -391,14 +391,18 @@ public int setAge(int a){
   }
   this.age = age
 }
-～～～
+~~~
 - 没有static修饰的方法调用: **引用.方法名(实参);** CP类.方法
 ### 构造方法
 - 构造方法/函数/构造器/Constructor
 - [修饰符列表] 构造方法名 (形参){构造方法体} //构造方法名和类名一致
-- 没有返回值类型 有了变为普通方法
+- 没有返回值类型 有了变为普通方法 因为返回值类型就是类本身
 - 用来创建对象
-- 
+- 方法调用 new 构造方法名 (实参)
+- ctrl + (shift) +/ 多行注释
+- 类中没构造方法有默认构造方法 缺省构造器
+- 无参数 有参数构造方法都要写 用到重载 public user(){}; public user(int i){}
+
 
 
 
