@@ -368,7 +368,34 @@ public static void sumN(int n){
 ## Java集成开发环境 IDE
 - 没有IDE需要安装JDK，配置环境变量，手动编译，没有错误提示
 - eclipse
-- 125
+-  workspace 工作区 存放java代码(src)和编译.class(output/bin)
+- 打开软件生成 .metadata 保存工作区状态(窗口)
+- 右上角切换布局(语言)
+- package/navigator/project 源代码窗口
+- console 控制台窗口
+- P125 project配置 包(package)机制
+### 封装
+- 对外提供简单的操作入口
+- 封装后产生真正的对象，独立体
+- 安全级别高 否则随意读取修改
+#### 属性私有化
+- private int age; //只能在本类访问 外部无法 对象.属性 访问
+#### 对外提供简单操作入口
+~~~
+public void setAge(int a){age = a;}
+public int setAge(int a){
+  //安全过滤
+  if(a < 0 || a >150){
+    System.out.println("不合法");
+    return;
+  }
+  this.age = age
+}
+- 没有static修饰的方法调用: **引用.方法名(实参);** CP类.方法
+### 构造方法
+
+
+
 
 
 
