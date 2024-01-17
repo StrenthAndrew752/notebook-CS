@@ -27,7 +27,7 @@ Java stars>1000 pushed>2021 language:Java<br>
   java -version  
   exit  
   del *class
-- 垃圾回收机制（GC）
+- 垃圾回收机制（GC） 没有引用指向对象
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
@@ -360,11 +360,11 @@ public static void sumN(int n){
 - ![引用](/pic/类2.png "引用详解")
 ### JVMM内存管理
 - ![JVM内存管理](/pic/JVM内存管理.png "内存")
-- 空指针异常 java.lang.NullPointerException 可以编译不能运行
-- 空引用访问实例香港的数据
-- customer.c = new customer();
+- 空指针异常 java.lang.NullPonterException 可以编译不能运行
+- 空引用访问实例变量的数据
+- customer c = new customer();
 - c = null;
-- System.out.println(c);
+- System.out.println(c);//如果一个对象为null，调用其方法或访问其字段就会产生NullPointerException
 ## Java集成开发环境 IDE
 - 没有IDE需要安装JDK，配置环境变量，手动编译，没有错误提示
 - eclipse
@@ -383,7 +383,7 @@ public static void sumN(int n){
 #### 对外提供简单操作入口
 ~~~
 public void setAge(int a){age = a;}
-public int setAge(int a){
+public int setAge(int age){
   //安全过滤
   if(a < 0 || a >150){
     System.out.println("不合法");
@@ -399,9 +399,15 @@ public int setAge(int a){
 - 没有返回值类型 有了变为普通方法 因为返回值类型就是类本身
 - 用来创建对象
 - 方法调用 new 构造方法名 (实参)
-- ctrl + (shift) +/ 多行注释
+- ctrl + (shift) +/ (多行)注释
 - 类中没构造方法有默认构造方法 缺省构造器
-- 无参数 有参数构造方法都要写 用到重载 public user(){}; public user(int i){}
+- 无参数 有参数构造方法都要写 用到重载 public User(){}; public User(int i){}
+### 构造对象的同时初始化实例变量
+- 构造方法创建对象 同时初始化实例变量（不在类加载的时候）
+- ctrl 鼠标移动到要查看的属性/方法
+- ctrl + O 查看类中所有方法
+- 133
+
 
 
 
