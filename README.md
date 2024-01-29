@@ -424,6 +424,17 @@ public int setAge(int age){
 - int i = 10
 - int j = i
 - 传递了10，j是一块全新的内存空间
+
+### this 关键字
+- this 是一个引用，保存当前对象的内存地址指向自身，this 存储在JVM堆内存java对象内部
+- 可以出现在实例方法中，表示当前的对象
+- name是实例变量，访问name一定是当前对象的name，this可省略
+- System.out.pringln(this.name + "在购物")
+- 创建两个customer对象
+- ![this1](/pic/this1.png)
+- 一个对象一个this
+- 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
+- 没有static 的变量是实例变量
 - 
   
 
