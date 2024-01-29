@@ -389,7 +389,7 @@ public int setAge(int age){
     System.out.println("不合法");
     return;
   }
-  this.age = age
+  this.age = age // 还有super();
 }
 ~~~
 - 没有static修饰的方法调用: **引用.方法名(实参);** CP类.方法
@@ -403,10 +403,11 @@ public int setAge(int age){
 - 类中没构造方法有默认构造方法 缺省构造器
 - 无参数 有参数构造方法都要写 用到重载 public User(){} public User(int i){}
 ### 构造对象的同时初始化实例变量
-- 构造方法创建对象 同时初始化实例变量（不在类加载的时候而在）
+- 构造方法创建对象 同时初始化实例变量（不在类加载的时候而在构造方法执行过程中）
 - ctrl 鼠标移动到要查看的属性/方法
 - ctrl + O 查看类中所有方法
-- 133
+- 块编辑
+- 
 
 
 
