@@ -260,6 +260,40 @@ public static void main(String[] args){
   System.out.println(i);//i的作用域，此时是11
 }
 ~~~
+- 低一级可以访问高一级的变量
+- 类级变量 static修饰 在类定义后就已经存在
+- 对象实例级变量就是成员变量，实例化后才会分配内存空间
+- 方法级变量就是在方法内部定义的变量-局部变量 作用域从它被声明的点开始，一旦出了自己的作用域马上从内存中消失
+- 块级变量就是定义在一个块内部的变量，变量的生存周期就是这个块，出了这个块就消失了，比如 if、for 语句的块。块是指由大括号包围的代码
+~~~
+public class Test{
+    public static String name = "TEST"; // 类级变量
+    public int i; // 对象实例级变量
+    
+    // 属性块，在类初始化属性时候运行
+    {
+        int j = 2;// 块级变量
+    }
+    
+    public void test1() {
+        int j = 3; // 方法级变量
+        if(j == 3) {
+            int k = 5; // 块级变量
+        }
+        // 这里不能访问块级变量，块级变量只能在块内部访问
+        System.out.println("name=" + name + ", i=" + i + ", j=" + j);
+    }
+ 
+    public static void main(String[] args) {
+        // 不创建对象，直接通过类名访问类级变量
+        System.out.println(Test.name);
+        // 创建对象并访问它的方法
+        Test t = new Test();
+        t.test1();
+    }
+}
+~~~
+- 
 - for + if 找出1-100的奇数
 ## while
 ~~~
