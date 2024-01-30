@@ -428,7 +428,17 @@ public int setAge(int age){
 ### this 关键字
 - this 是一个引用，保存当前对象的内存地址指向自身，this 存储在JVM堆内存java对象内部
 - 可以出现在实例方法中，表示当前的对象
-- name是实例变量，访问name一定是当前对象的name，this可省略
+- name是实例变量，要采用引用.访问 但是访问name在大括号中，**作用域**包括当前方法，一定是当前对象的name，this可省略
+~~~
+public class Customer{
+  String name;
+  public Customer(){
+  }
+  public void Shopping(){
+    System.out.pringln(name + "在购物");
+  }
+}
+~~~
 - System.out.pringln(this.name + "在购物")
 - 创建两个customer对象
 - ![this1](/pic/this1.png)
