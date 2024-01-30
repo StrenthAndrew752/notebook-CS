@@ -362,6 +362,7 @@ public static void sumN(int n){
 - u.address.city
 - ![引用](/pic/类2.png "引用详解")
 - 字符串是引用数据类型 创建了Srting对象将地址保存给name 和new作用相同
+- 类里面的字符串属性都是引用
 ### JVMM内存管理
 - ![JVM内存管理](/pic/JVM内存管理.png "内存")
 - 空指针异常 java.lang.NullPonterException 可以编译不能运行
