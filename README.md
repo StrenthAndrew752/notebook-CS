@@ -320,8 +320,9 @@ do{
 - 【修饰符列表】 返回值类型 方法名（形参列表）{方法体;}
 - 不同功能抽取到不同方法 不全写在main
 ### 修饰符 public static
-- 含static时 调用 类名.方法名(实参) 调用的方法和被调用的方法在同一个类，类名可省略 最好一个java源文件一个class
-- 定义方法时不执行，调用时执行
+- **含static时 调用 类名.方法名(实参)** 调用的方法和被调用的方法在同一个类，类名可省略 最好一个java源文件一个class
+- 也可采用引用. 也和对象无关，也不会有空指针异常
+- 定义方法时不执行，调用.执行 即使采用
 - 不返回任何数据是void可以return;（此时所在方法结束） 否则return A(返回值类型，8种)；
 - 返回值可以接收也可以不接收 **用变量接收** 用赋值运算符先计算右边 int c = divide(10,3);
 - 形参 局部变量 逗号相隔 重要的是数据类型不是形参名字
@@ -462,7 +463,7 @@ public int setAge(int age){
 
 ### this 关键字
 - this 是一个引用，保存当前对象的内存地址指向自身，this 存储在JVM堆内存java对象内部
-- 可以出现在实例方法中，表示当前的对象
+#### 可以出现在**实例方法**(main中没有this)中，表示当前的对象
 - name是实例变量，要采用引用.访问 但是访问name在大括号中，**作用域**包括当前方法，一定是当前对象的name，this可省略
 ~~~
 public class Customer{
@@ -479,12 +480,39 @@ public class Customer{
 #### 创建两个customer对象
 - ![this1](/pic/this1.png)
 - 一个对象一个this
-- this可以出现在实例方法
+#### this使用在实例方法
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
-- 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（带static方法不能访问 this.name）
+- 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（**带static方法不能访问 this.name**）
+- static方法不能直接访问实例变量和实例方法 不带static可以嵌套 P139
+#### 一定要用this 用来区分实例变量和局部变量
+~~~
+public class Customer{
+  private int id; //实例变量
+  //构造方法
+  public void SetId(int id){
+    this.id = id;
+  }
+  public int GetId(){
+    return id; //这里不用this 因为实例方法
+  }
+  //构造方法
+  public Customer(int id){
+    this.id = id;
+  }
+}
+~~~
+#### this使用在构造方法
+- 通过当前构造方法调用其他的构造方法 this(实参) 只能出现在构造函数第一行
+~~~
+public Customer(int id, String name){this.id = id;this.name = name;}
+public Customer(){
+//int id = 000001; String name = "张三"; 可以通过调用另一个构造方法完成
+this(00001,"张三")；
+//new Customer(00001,"张三");  不能采用这种方法 因为当调用构造方法时会new两次
+}
+~~~
+- P143 省略类名/this
 - 
-
-
 
 
 
