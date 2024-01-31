@@ -479,8 +479,10 @@ public class Customer{
 - 创建两个customer对象
 - ![this1](/pic/this1.png)
 - 一个对象一个this
+- this可以出现在实例方法
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
-- 没有static 的变量是实例变量
+- 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（this.name）
+- 
 - 
   
 
