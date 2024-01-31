@@ -21,13 +21,13 @@ Java stars>1000 pushed>2021 language:Java<br>
 - program files(X86) 32位
 - DOS命令
 - dir  
-  cd Desktop （change direcroty）  
-  cd.. 上级目录  
-  cd \ 跟目录  
-  cls  
-  java -version  
-  exit  
-  del *class
+- cd Desktop （change direcroty）  
+- cd.. 上级目录  
+- cd \ 跟目录  
+- cls  
+- java -version  
+- exit  
+- del *class
 - 垃圾回收机制（GC） 没有引用指向对象
 - 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
 - java加载和运行
@@ -246,7 +246,6 @@ if(sex) System.out.println("男"); else System.out.println("女")；
 - for | while | do while
 - 循环体(要反复执行的代码) 计算器
 ### 变量的作用域
-- 
 ~~~
 for(初始化表达式；布尔表达式；更新表达式){
   循环体；
@@ -477,12 +476,13 @@ public class Customer{
 }
 ~~~
 - System.out.pringln(this.name + "在购物")
-- 创建两个customer对象
+#### 创建两个customer对象
 - ![this1](/pic/this1.png)
 - 一个对象一个this
 - this可以出现在实例方法
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
 - 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（带static方法不能访问 this.name）
+- 
 
 
 
