@@ -20,7 +20,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 ### 
 - program files(X86) 32位
 - DOS命令
-- dir  
+dir  
 - cd Desktop （change direcroty）  
 - cd.. 上级目录  
 - cd \ 跟目录  
