@@ -484,7 +484,7 @@ public class Customer{
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
 - 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（**带static方法不能访问 this.name**）
 - static方法不能直接访问实例变量和实例方法 不带static可以嵌套 P139
-#### 一定要用this 用来区分实例变量和局部变量
+#### this用来区分实例变量和局部变量
 ~~~
 public class Customer{
   private int id; //实例变量
@@ -512,6 +512,12 @@ this(00001,"张三")；
 }
 ~~~
 - P143 省略类名/this
+
+### static
+- 实例变量 每个对象都保存这块内存空间 浪费内存
+- 静态变量存储在方法区内存中 在类加载时初始化 不需要创建对象 内存就开辟了
+- static String country
+- static修饰的元素 可以类名.也可以引用.
 - 
 
 
