@@ -484,7 +484,7 @@ public int setAge(int age){
 - 传递了10，j是一块全新的内存空间
 
 ### this 关键字
-- this 是一个引用，保存当前对象的内存地址指向自身，this 存储在JVM堆内存java对象内部
+- this 是一个引用，**保存当前对象的内存地址指向自身**，this 存储在JVM堆内存java对象内部
 #### 可以出现在**实例方法**(main中没有this)中，表示当前的对象
 - name是实例变量，要采用引用.访问 但是访问name在大括号中，**作用域**包括当前方法，一定是当前对象的name，this可省略
 ~~~
@@ -501,7 +501,7 @@ public class Customer{
 - System.out.pringln(this.name + "在购物")
 #### 创建两个customer对象
 - ![this1](/pic/this1.png)
-- 一个对象一个this
+- 一个对象一个this 
 #### this使用在实例方法
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
 - 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（**带static方法不能访问 this.name**）
@@ -589,6 +589,15 @@ public class CreditAccount extends Account{
 - String s = et.toString();
 #### 查找类型【open type】C+S+T
 #### 查找资源【open resource】C+S+R 不是类的文件
+### 方法覆盖 override (方法重写)
+- 父类中方法无法满足子类的业务需求
+- 返回值类型 方法名 形参列表相同
+- 访问权限不能更低 只能更高 public private protected
+- 抛出异常不能更多只能更少 public void move() throws Exception{}
+#### 注意
+- 私有方法，构造方法没有继承 不能覆盖
+- 静态方法不存在覆盖
+- 覆盖只针对方法不针对属性
 - 
 
 
