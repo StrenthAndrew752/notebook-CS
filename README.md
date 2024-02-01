@@ -32,7 +32,9 @@ class 类{
 
 this
 }
-### 
+### p151
+- this
+- 
 - program files(X86) 32位
 - DOS命令
 - dir  
@@ -502,7 +504,7 @@ public class Customer{
 #### 创建两个customer对象
 - ![this1](/pic/this1.png)
 - 一个对象一个this 
-#### this使用在实例方法
+#### this使用在实例方法 可省略
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
 - 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（**带static方法不能访问 this.name**）
 - static方法不能直接访问实例变量和实例方法 不带static可以嵌套 P139
