@@ -553,16 +553,32 @@ this(00001,"张三")；
 ### 继承
 - 封装产生独立体
 - 继承是为了代码复用 方法覆盖和多态机制
+#### 继承机制
+- 私有的数据，构造方法不支持继承 其他数据都可以支持
 - 语法格式：
-- [修饰符表] class 类名 extends 父类名{
--   类体 = 属性 + 方法
-- }
+~~~
+[修饰符表] class 类名 extends 父类名{
+  类体 = 属性 + 方法
+}
+public class CreditAccount extends Account{
+  //继承private account，balance，通过继承的get set调用
+  private double credit;
+  //构造+读改
+  public CreditAccount(){
+    super();
+  }
+  public double getCredit(){
+    return credit;
+  }
+  public void setCredit(double credit){
+    this.credit = credit;
+  }
+}
+~~~
 - java只支持单继承 一个类不能继承很多类
 - B继承A
 - B 父类 基类 超类 superclass
 - A 子类 派生类 subclass
-#### 继承机制
-- 私有的，构造方法不支持继承 其他数据都可以支持
 #### 间接继承多个类
 - c extends B{}
 - B extends A{}
