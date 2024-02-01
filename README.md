@@ -25,7 +25,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 - cd.. 上级目录  
 - cd \ 跟目录  
 - cls  
-- java -version  
+- java -version
 - exit  
 - del *class
 - 垃圾回收机制（GC） 没有引用指向对象
@@ -46,7 +46,13 @@ Java stars>1000 pushed>2021 language:Java<br>
                   */ 通过javadoc.exe生成帮助文档 鼠标停留有信息
 
         public class HelloWorld{//类体中不直接写java 除声明变量外
-          public static void main(String[] args){//main 方法名 表示定义一个公开的静态的主方法(程序入口) string[]是一种饮用数据类型 args是局部变量，可以随意命名
+          public static void main(String[] args){
+   
+//public 公开的，在任何位置都可以方位
+//static 静态的，类名.访问
+//main 方法名 表示定义一个公开的静态的主方法(程序入口) main方法也可以重载
+//string[]是一种饮用数据类型 args是局部变量，可以随意命名
+
             System.out.println("Hello World!");//方法体
             System.out.println("I am Andrew");  
           }//公开的类名必须和源文件一致
@@ -314,6 +320,7 @@ do{
 - for 循环中return终止方法
   
 ### continue + 循环名称（了解）
+
 ## 方法 method/function(c)
 - 代码复用 调用 invoke
 - 定义在类体中
@@ -516,9 +523,19 @@ this(00001,"张三")；
 ### static
 - 实例变量 每个对象都保存这块内存空间 浪费内存
 - 静态变量存储在方法区内存中 在类加载时初始化 不需要创建对象 内存就开辟了
-- static String country
+- static String country(国籍) **可以加private吗**
 - static修饰的元素 可以类名.也可以引用.
+- static方法无法访问实例方法和实例对象
+#### static 代码块
+- static{java语句；}
+- **类加载时**执行（main方法前） 一个类中可编写多个 自上而下依次执行
+- 类加载到JVM时记录日志
+#### 实例方法快
+- 构造方法执行前执行(**对象初始化**时机) 在类中，构造函数外
+- {java语句;}
 - 
+
+
 
 
 
