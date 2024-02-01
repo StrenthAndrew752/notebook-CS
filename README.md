@@ -462,7 +462,7 @@ public int setAge(int age){
 - 没有返回值类型 有了变为普通方法 因为返回值类型就是类本身
 - 用来创建对象
 - 方法调用 new 构造方法名 (实参)
-- ctrl + (shift) +/ (多行)注释
+#### ctrl + (shift) +/ (多行)注释
 - 类中没构造方法有默认构造方法 缺省构造器
 - 无参数 有参数构造方法都要写 用到重载 public User(){} public User(int i){}
 ### 构造对象的同时初始化实例变量
@@ -557,6 +557,22 @@ this(00001,"张三")；
 - [修饰符表] class 类名 extends 父类名{
 -   类体 = 属性 + 方法
 - }
+- java只支持单继承 一个类不能继承很多类
+- B继承A
+- B 父类 基类 超类 superclass
+- A 子类 派生类 subclass
+#### 继承机制
+- 私有的，构造方法不支持继承 其他数据都可以支持
+#### 间接继承多个类
+- c extends B{}
+- B extends A{}
+- A extends T{}
+- C直接继承B 间接继承T A
+- 没有显示继承任何类则默认继承JDK javaSE库中的java.Lang.object类(所有类都继承这个类)
+- Extendtest et = new Extendtest();
+- String s = et.toString();
+#### 查找类型【open type】C+S+T
+#### 查找资源【open resource】C+S+R 不是类的文件
 - 
 
 
