@@ -607,7 +607,7 @@ public class CreditAccount extends Account{
 - animl a = new cat(); **父类型引用指向子类型对象** cat is a animal
 - a.catchMouse() ✖️ 只能访问animal中的方法 编译不通过
 - **a.move()**
-- 字节码中有move方法，编译通过。这过程称为静态绑定，编译阶段绑定
+- Animal.class 字节码中有move方法，编译通过。这过程称为静态绑定，编译阶段绑定
 - a的底层（堆内存）对象是cat 运行时调用cat的方法。这过程称为动态绑定，运行阶段绑定
 - 无论有没有重写move，运行阶段都是调用cat对象的move
 - 父类型引用指向子类型对象这种机制导致程序在编译阶段和运行阶段绑定两种不同的形态/状态 - 多态
