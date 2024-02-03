@@ -602,8 +602,8 @@ public class CreditAccount extends Account{
 - 覆盖只针对方法不针对属性
 
 ### 多态
-- 向上转型（upcasting）子类型转换为父类型 自动类型转换（bool外七种都可）
-- 向下转型（downcasting）父 - 子 强制类型转换
+- 向上转型（upcasting）子类型转换为父类型 自动类型转换（bool外七种都可）**必须有继承关系**
+- 向下转型（downcasting）父 - 子 强制类型转换 **必须有继承关系** 
 - animl a = new cat(); **父类型引用指向子类型对象** cat is a animal
 - a.catchMouse() ✖️ 只能访问animal中的方法 编译不通过
 - **a.move()**
@@ -611,8 +611,24 @@ public class CreditAccount extends Account{
 - a的底层（堆内存）对象是cat 运行时调用cat的方法。这过程称为动态绑定，运行阶段绑定
 - 无论有没有重写move，运行阶段都是调用cat对象的move
 - 父类型引用指向子类型对象这种机制导致程序在编译阶段和运行阶段绑定两种不同的形态/状态 - 多态
-- 子类型中特有方法需要转型
--  
+#### 调用子类型中特有方法需要向下转型
+-  Cat b = (Cat)a;//类似long x = 100L; int i = (int)x
+-  b.catchMouse();
+-  Animal a3 = new bird();Cat c3 = (Cat)a3; ✖️
+-  **ClassCastException** 必须有继承关系 出现在向下转型
+-  编译时通过 cat animal 继承关系，向下转型 运行行不通过 因为真实存在的对象是bird类型，而不是animal
+-  java规范强制类型转换前 使用instanceof运算符避免异常
+-  (引用 instanceof 数据类型名) 执行结果布尔类型
+-  a instance of Animal; true - a这个引用指向的对象是一个Animal类型
+-  当a3引用指向的对象是一个Cat时if(a3 instance of Cat){
+     Cat c3 = (Cat)a3;//再做强制类型转换
+   }else if(a3 instanceof Bird){
+      Bird b2 = (Bird)a3;
+      Bird.fly();
+   }
+#### 断点调试 P153
+- 双击一行(表示执行到这行上面，不包括这行)，右键 debug as F5 678
+- 
 
 
 
