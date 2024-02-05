@@ -53,14 +53,14 @@ this
 -  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 -  JRE(包括JVM)  java runtime envoronment 运行环境（运行JDK）
 -  JDK目录
-  java/bin :存放命令 包括javac java.exe  
+  java/bin 存放命令 包括javac java.exe  
   Windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
 -  注释 只在源文件不会被编译到字节码
    单行 //  
   多行 /* */  
   javadoc注释 /**  
                *  
-                  */ 通过javadoc.exe生成帮助文档 鼠标停留有信息
+                  */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
 
         public class HelloWorld{//类体中不直接写java 除声明变量外
           public static void main(String[] args){
@@ -590,7 +590,7 @@ public class CreditAccount extends Account{
 - Extendtest et = new Extendtest();
 - String s = et.toString();
 #### 查找类型【open type】C+S+T
-#### 查找资源【open resource】C+S+R 不是类的文件
+#### 查找资源【open resource】C+S+R 当前项目下(src)文件
 ### 方法覆盖 override (方法重写)
 - 父类中方法无法满足子类的业务需求
 - 返回值类型 方法名 形参列表相同
@@ -618,16 +618,39 @@ public class CreditAccount extends Account{
 -  **ClassCastException** 必须有继承关系 出现在向下转型
 -  编译时通过 cat animal 继承关系，向下转型 运行行不通过 因为真实存在的对象是bird类型，而不是animal
 -  java规范强制类型转换前 使用instanceof运算符避免异常
--  (引用 instanceof 数据类型名) 执行结果布尔类型
+#### 引用 instanceof 数据类型名) 执行结果布尔类型
 -  a instance of Animal; true - a这个引用指向的对象是一个Animal类型
--  当a3引用指向的对象是一个Cat时if(a3 instance of Cat){
+-  当a3引用指向的对象是一个Cat时
+-  if(a3 instance of Cat){
      Cat c3 = (Cat)a3;//再做强制类型转换
    }else if(a3 instanceof Bird){
       Bird b2 = (Bird)a3;
       Bird.fly();
    }
+#### 解耦合
+- 降低程序耦合度，提高程序扩展力
+- master cat 新加dog类不对master类中方法有影响 master只和pet有联系，只面向抽象的pet
+- public void Master{
+    Public void feed(Pet pet){//相当于Pet pet = new cat()
+      pet.eat();//
+    }
+  }
+- public void Test{
+  public static void main(String[] args){
+    Master Zhangsan = new Master();
+    Zhangsan.feed(new Cat());//参数传递到feed方法相当于Pet pet = new cat()
+    //也就是父类型引用指向子类型变量 编译阶段调用pet的方法，运行阶段调用对象的方法
+    //Cat Tom = new Cat(); Zhangsan.feed(tom);
+    
+  }
+}
+- 
 #### 断点调试 P153
 - 双击一行(表示执行到这行上面，不包括这行)，右键 debug as F5 678
+- resume 终止
+
+### final
+- P155 源码链接 
 - 
 
 
