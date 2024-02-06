@@ -650,7 +650,15 @@ public class CreditAccount extends Account{
 - resume 终止
 
 ### final
-- P155 源码链接 
+- P155 源码链接方法 类库：源码 字节码 帮助文档
+- 最终的 不可变的
+- 修饰的类无法继承 方法无法覆盖 变量赋值的变量不能重新赋值
+- final修饰的实例变量要手动赋值，不能采用系统默认值
+- final int age = 1;
+- final int age;
+- public FinalTest(){
+    this.age = 1
+- }//两种方法都在构造方法执行时给实例变量赋值，时间相同
 - 
 
 
