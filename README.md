@@ -20,7 +20,7 @@ Java stars>1000 pushed>2021 language:Java<br>
 ### P148
 class 类{
 静态代码块;
-实例代码块；
+实例代码块
 
 静态变量;
 实例变量;
@@ -652,14 +652,63 @@ public class CreditAccount extends Account{
 ### final
 - P155 源码链接方法 类库：源码 字节码 帮助文档
 - 最终的 不可变的
-- 修饰的类无法继承 方法无法覆盖 变量赋值的变量不能重新赋值
+- final修饰的修饰的类无法继承
+- final修饰的方法无法覆盖
+- final修饰的变量赋值后不能重新赋值
 - final修饰的实例变量要手动赋值，不能采用系统默认值
 - final int age = 1;
+#### 方法二
 - final int age;
 - public FinalTest(){
     this.age = 1
 - }//两种方法都在构造方法执行时给实例变量赋值，时间相同
-- 
+#### 常量
+- final 修饰的变量不可变 一般与static联合使用(节约内存) 称为常量
+- public static final GUO_JI = "中国";
+- 常量名字全大写 下划线连接
+- 类名.调用 Math.PI
+
+- final修饰的引用不能指向新的对象 被指向的变量无法被垃圾回收
+- final User u = new User(30);
+- u = new User(50) ✖️
+- 对象内部内存可以修改 u.id = 50;
+
+### 包和import
+- 不同功能的类放到不同的包
+- 程序第一行(不包括注释)编写package语句
+- Package 包名
+- 包名：公司域名倒序 + 项目名 + 模块名 + 功能名//重名几率低 全小写
+- com.bjpowernode.oa.service;
+- 一个包对应一个目录 这里四个
+- 类名变为com.bjpowernode.oa.service.day11.Test01 用这个类编译运行
+- 在第一层目录下cmd
+- javac *.java
+- java com.bjpowernode.oa.service.day11.Test01
+- 需要把Test101.class放在第四层目录下
+#### 另一种方式
+- javac -d 编译后存放的路径 java源文件的路径
+- javac -d C:\ F:\Hello.java  //将F:\Hello.java编译后放到C:\目录下
+#### 在第一层目录下cmd java -d . *.java
+- 当前路径中 *.java编译后放到当前目录下
+~~~
+
+package com.bjpowernode.javase.day11;
+
+public class Test02{
+  public static void main(String[] args){
+    com.bjpower.node.javase.day11.test01 t = new com.bjpower.node.javase.day11.test01();
+    System.out.println(t);
+    Test01 tt = test01 //类在同一个包下 包名可省略
+    //不同则import导入类 写在package下class上
+    //import com.bjpowernode.javase.day11.test01;
+    //import import com.bjpowernode.javase.day11.*;
+  }
+}
+java -d . *.java
+~~~
+- java lang包是核心包不需要导入 包括String
+- java.util.Date d = new java.util.Date();//工具类
+- import java.util.*;
 
 
 
