@@ -34,19 +34,21 @@ this
 }
 ### p151
 - this
-- 
+### p159
+
 - program files(X86) 32位
 - DOS命令
 - dir  
   cd Desktop （change direcroty）  
-- cd.. 上级目录  
+- cd.. 上级目录
+- cd. 当前目录 
 - cd \ 跟目录  
 - cls  
 - java -version
 - exit  
 - del *class
 - 垃圾回收机制（GC） 没有引用指向对象
-- 可移植性（跨平台） 一次编译 到处运行  JVM（java虚拟机）
+- 可移植性（跨平台） 一次编译 到处运行（从windows到linux）  JVM（java虚拟机）
 - java加载和运行
 -  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
 -  编译只检查语法不运算 byte b = i（int 10） / 3 (错) 
@@ -681,26 +683,29 @@ public class CreditAccount extends Account{
 - com.bjpowernode.oa.service;
 - 一个包对应一个目录 这里四个
 - package com.bjpowernode.oa.service.day11;
-- 如何编译运行这个包下的类？
-在第一层目录下cmd  
+- 如何编译运行这个包下的类？  
+在第一层目录下cmd(day11-2)  
 javac *.java  
 java com.bjpowernode.oa.service.day11.Test01  
-需要把Test101.class放在第四层目录下
+（需要把Test101.class放在第四层目录下才能运行）
 #### 另一种方式
 - javac -d 编译后存放的路径 java源文件的路径
 - javac -d C:\ F:\Hello.java  //将F:\Hello.java编译后放到C:\目录下
 #### 在第一层目录下cmd java -d . *.java
 - 当前路径中 *.java编译后放到当前目录下
+- 自动创建目录
 ~~~
 
 package com.bjpowernode.javase.day11;
+
+public class Test01{}
 
 public class Test02{
   public static void main(String[] args){
     com.bjpower.node.javase.day11.test01 t = new com.bjpower.node.javase.day11.test01();
     System.out.println(t);
     Test01 tt = test01 //类在同一个包下 包名可省略
-    //不同则import导入类 写在package下class上
+    //不同则import导入类 写在package语句下class语句上
     //import com.bjpowernode.javase.day11.test01;
     //import import com.bjpowernode.javase.day11.*;
   }
@@ -710,7 +715,17 @@ java -d . *.java
 - java lang包是核心包不需要导入 包括String
 - java.util.Date d = new java.util.Date();//工具类
 - import java.util.*;
+- Date d = new Date();
 
+### 访问控制权限修饰符
+- 控制元素的访问范围
+- public      公开的 任何位置都可访问
+- protected   同包，子类
+- 缺省         同包
+- private     私有的，只能在本类访问
+- private < 缺省 < proetcted < public
+- 类只能public/缺省 【内部类除外】
+- 
 
 
 
