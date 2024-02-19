@@ -680,11 +680,12 @@ public class CreditAccount extends Account{
 - 包名：公司域名倒序 + 项目名 + 模块名 + 功能名//重名几率低 全小写
 - com.bjpowernode.oa.service;
 - 一个包对应一个目录 这里四个
-- 类名变为com.bjpowernode.oa.service.day11.Test01 用这个类编译运行
-- 在第一层目录下cmd
-- javac *.java
-- java com.bjpowernode.oa.service.day11.Test01
-- 需要把Test101.class放在第四层目录下
+- package com.bjpowernode.oa.service.day11;
+- 如何编译运行这个包下的类？
+在第一层目录下cmd  
+javac *.java  
+java com.bjpowernode.oa.service.day11.Test01  
+需要把Test101.class放在第四层目录下
 #### 另一种方式
 - javac -d 编译后存放的路径 java源文件的路径
 - javac -d C:\ F:\Hello.java  //将F:\Hello.java编译后放到C:\目录下
