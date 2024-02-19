@@ -48,12 +48,13 @@ this
 - exit  
 - del *class
 - 垃圾回收机制（GC） 没有引用指向对象
-- 可移植性（跨平台） 一次编译 到处运行（从windows到linux）  JVM（java虚拟机）
+- 可移植性（跨平台） 一次编译 到处运行（从windows到linux）  java代码运行在JVM（java虚拟机），而不和操作系统追鹅交互
 - java加载和运行
--  .java(源文件，在硬盘)-.class(使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   \javac 路径
--  编译只检查语法不运算 byte b = i（int 10） / 3 (错) 
--  java.exe 运行 \ A.class - java A  \ JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
--  JRE(包括JVM)  java runtime envoronment 运行环境（运行JDK）
+-  .java(源文件，在硬盘)-.class(编译通过则使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   //javac 路径
+-  编译只检查语法不运算 byte b = i（int 10 / 3 (错) 
+-  java.exe 运行 // A.class - java A  // JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
+-  JRE(包括JVM)  java runtime envoronment 运行环境
+-  JDK(自带JRE)给开发 JRE给客户（内存小）
 -  JDK目录
   java/bin 存放命令 包括javac java.exe  
   Windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
@@ -70,11 +71,13 @@ this
 //public 公开的，在任何位置都可以方位
 //static 静态的，类名.访问
 //main 方法名 表示定义一个公开的静态的主方法(程序入口) main方法也可以重载
-//string[]是一种饮用数据类型 args是局部变量，可以随意命名
+//string[]是一种引用数据类型 args是局部变量，可以随意命名
 
             System.out.println("Hello World!");//方法体
             System.out.println("I am Andrew");  
-          }//公开的类名必须和源文件一致
+          }
+          //public class 和class区别 
+          公开的类名必须和文件名一致 一个文件一个公开类
    }
 
         classA{
