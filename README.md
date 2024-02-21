@@ -57,8 +57,12 @@ del *class
 -  JRE(包括JVM)  java runtime envoronment 运行环境
 -  JDK(自带JRE)给开发 JRE给客户（内存小）
 ### JDK目录  
-- java/bin 存放命令 包括javac java.exe  
+- java/bin 存放命令 包括javac java.exe
+## java环境搭建
 - windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
+
+
+
 -  注释 只在源文件不会被编译到字节码  
   单行 //  
   多行 /*  
@@ -67,33 +71,35 @@ del *class
                *  
                   */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
 
-        public class HelloWorld{//类体中不直接写java 除声明变量外
-          public static void main(String[] args){
-   
-//public 公开的，在任何位置都可以方位
-//static 静态的，类名.访问
-//main 方法名 表示定义一个公开的静态的主方法(程序入口) main方法也可以重载
-//string[]是一种引用数据类型 args是局部变量，可以随意命名
+~~~java
+public class HelloWorld{//类体中不直接写java 除声明变量外
+  public static void main(String[] args){
+ 
+  //public 公开的，在任何位置都可以方位
+  //static 静态的，类名.访问
+  //main 方法名 表示定义一个公开的静态的主方法(程序入口) main方法也可以重载
+  //string[]是一种引用数据类型 args是局部变量，可以随意命名
 
-            System.out.println("Hello World!");//方法体
-            System.out.println("I am Andrew");  
-          }
-          //public class 和class区别 
-          公开的类名必须和文件名一致 一个文件一个公开类
-   }
+  System.out.println("Hello World!");//方法体
+  }
+  //public class 和class区别 
+  //公开的类名必须和文件名一致 一个文件一个公开类
+  //一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
+}
 
-        classA{
-          public static void main(String[] args){
-            System.out.println("run this main");//println换行 print不换
-          } 
-  }//一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
+classA{
+  public static void main(String[] args){
+    System.out.println("run this main");//println换行 print不换
+  } 
+}
+~~~
 
 ## 标识符
-    可以自己命名 数字字母_$,不以数字开头  
-    类名、方法（main）、常量、接口
-    命名规范：类名 接口名  首大写 后单词大写
-    变量名 方法名 首小写 后单词大写
-    常量名 全部大写
+- 可以自己命名 数字字母_$,不以数字开头  
+- 类名、方法（main）、常量、接口
+- 命名规范：类名 接口名  首大写 后单词大写
+- 变量名 方法名 首小写 后单词大写
+- 常量名 全部大写
 ## 关键字 
 SUN提前设置 全小写
 ## 字面值(数据)
