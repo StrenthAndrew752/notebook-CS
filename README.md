@@ -36,15 +36,23 @@ this
 - this
 ### p159
 
-- program files(X86) 32位
-- DOS命令
+### java 基础
+- program files(X86) 32位系统
+-  注释 只在源文件不会被编译到字节码  
+  单行 //  
+  多行 /*  
+*/  
+  javadoc注释 /**  
+               *  
+                  */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
+### DOS命令
 dir  
 cd Desktop （change direcroty）  
 cd.. 上级目录  
 cd. 当前目录  
 cd \ 跟目录  
 cls  
-java -version  
+java -version / javac -version  //java和javac命令版本
 exit  
 del *class
 ### java特性
@@ -56,20 +64,21 @@ del *class
 -  java.exe 运行 // A.class - java A  // JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 -  JRE(包括JVM)  java runtime envoronment 运行环境
 -  JDK(自带JRE)给开发 JRE给客户（内存小）
+-  JDK > JRE >JVM
 ### JDK目录  
 - java/bin 存放命令 包括javac java.exe
+
 ## java环境搭建
-- windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
+- 不配置环境 javac只能在bin目录下使用，不是内部或外部命令，不能在计算机任何位置直接使用
+- windows/System32/ipconfig.exe 在administrator下可使用
+- windows操作系统会从当前目录再从环境变量path下搜索
+- 在环境变量path指定的路径中设置（我的电脑-属性-高级）**path环境变量属于操作系统**
+- path中增加一个javac所在目录（java/bin），封号相隔
+- javac可以采用绝对路径（admin下cmd+绝对路径）也可采用相对路径（java文件目录下cmd+java文件名）
+- java + 文件名（HelloWorld）
+- 配置classpath 帮助类加载器找到HelloWorld字节码文件 **classpath环境变量属于java语言中的环境变量**
+- classpath=.; 默认从当前目录查找
 
-
-
--  注释 只在源文件不会被编译到字节码  
-  单行 //  
-  多行 /*  
-*/  
-  javadoc注释 /**  
-               *  
-                  */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
 
 ~~~java
 public class HelloWorld{//类体中不直接写java 除声明变量外
