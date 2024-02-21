@@ -77,7 +77,7 @@ del *class
 - javac可以采用绝对路径（admin下cmd+绝对路径）也可采用相对路径（java文件目录下cmd+java文件名）
 - java + 文件名（HelloWorld）
 - 配置classpath 帮助类加载器找到HelloWorld字节码文件 **classpath环境变量属于java语言中的环境变量**
-- classpath=.; 默认从当前目录查找
+- classpath=.; classpath不用配置，默认从当前目录查找
 
 
 ~~~java
