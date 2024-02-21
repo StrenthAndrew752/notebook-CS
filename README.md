@@ -61,7 +61,8 @@ del *class
 - windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
 -  注释 只在源文件不会被编译到字节码  
   单行 //  
-  多行 /* */  
+  多行 /*  
+*/  
   javadoc注释 /**  
                *  
                   */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
