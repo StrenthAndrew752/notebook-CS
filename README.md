@@ -56,9 +56,9 @@ del *class
 -  java.exe 运行 // A.class - java A  // JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 -  JRE(包括JVM)  java runtime envoronment 运行环境
 -  JDK(自带JRE)给开发 JRE给客户（内存小）
--  JDK目录
-  java/bin 存放命令 包括javac java.exe  
-  Windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
+### JDK目录  
+java/bin 存放命令 包括javac java.exe  
+windows/System32 ipconfig.exe 在环境变量path指定的路径中设置（属性-高级） classloader: classpath=.;XX(当前目录) 用户变量
 -  注释 只在源文件不会被编译到字节码
    单行 //  
   多行 /* */  
