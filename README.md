@@ -96,7 +96,7 @@ public class HelloWorld{//类体中不直接写java 除声明变量外
   //一个java源文件可以有多个class 并可以没有public class 每一个class都可以有main方法
 }
 
-classA{
+class A{
   public static void main(String[] args){
     System.out.println("run this main");//println换行 print不换
   } 
