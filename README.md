@@ -153,7 +153,7 @@ SUN提前设置 全小写
 - char K = '我' 双字节可存储中文 '\u4e2d' - 中
 
 #### 字符型字面值
-- 单字符
+- 单字符  
   字符数据类型的范围为0到65535(2^16-1) (FFFF/ffff)
   char c = 'A';  
   char c = '\101';  //八进制
@@ -162,7 +162,7 @@ SUN提前设置 全小写
   char c = 65;
   char-int char c = '\u0041';int f = c; f=65
   
-- 字符转义序列
+- 字符转义序列  
   char c2 = '\n' 换行符  '\t'制表符  '\r'回车  '\\'反斜杠  '\f'换页  '\b'退格  
   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)  
   jdk native2ascii.exe  \转义u-unicode
