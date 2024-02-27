@@ -125,7 +125,7 @@ SUN提前设置 全小写
   成员变量 方法体外**类体**内声明 **就近原则** 有默认值(0) char-\u0000(\u0020是空格)
 ## 数据类型 
 - 指导程序运行阶段分配多少空间
-### 基本数据类型
+### 基本数据类型(Primitive Data Types)
 - 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte(字节)
 - 取值范围  源码补码反码
 - 以补码存储
@@ -138,8 +138,8 @@ SUN提前设置 全小写
 - https://zhuanlan.zhihu.com/p/673611096
 
   
-### 引用数据类型   
-- 类 接口 数组 字符串
+### 引用数据类型(Reference Data Types)
+- 类 接口 数组(字符串)
 - 1byte(字节) = 8 bit(字节位) 1KB = 8byte 第一位表正负
 #### ASCII码
 - 让计算机显示现实中的文字 单字节
@@ -147,15 +147,27 @@ SUN提前设置 全小写
   'a' --> 97 按照ASCII 解码 [0110 0001]  
   'A' --> 65  
   '0' --> 48
-  char c = 0x30; //16进制
+  大小写字符差32
 - 简中编码 GB2312 < GBK < GB18030
 - 统一所有 unicode utf-8（.） utf-16 utf-32 java标识符可以用中文 public class 学生{}
-- char K = '我' 双字节可存储中文
-- 转义字符\
-  char c2 = '\n' 换行符  '\t'制表符  
-  char k = '\\'   char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)
-- jdk native2ascii.exe 中 '\u4e2d' \转义u-unicode
-- 整数型 byte short int long
+- char K = '我' 双字节可存储中文 '\u4e2d' - 中
+
+#### 字符型字面值
+- 单字符
+  字符数据类型的范围为0到65535(2^16-1) (FFFF/ffff)
+  char c = 'A';  
+  char c = '\101';  //八进制
+  char c = '\u0041';  //ASCII字符占据Unicode字符集中前127个值
+  char c = 0x41; //十六进制，等海于0x0041  
+  char c = 65;
+  char-int char c = '\u0041';int f = c; f=65
+  
+- 字符转义序列
+  char c2 = '\n' 换行符  '\t'制表符  '\r'回车  '\\'反斜杠  '\f'换页  '\b'退格  
+  char k ='\'(\将‘转义为普通‘,错)  char k = ''Hello''(前两个单引号配对，错)  
+  jdk native2ascii.exe  \转义u-unicode
+
+### 整数型 byte short int long
 - int a = 10; 10默认int
 - 三种表示方式
 - int a = 10 / 3; 整数/整数=整数
