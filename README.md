@@ -525,6 +525,11 @@ public static void main(String[] args) {
 }
 ~~~
 
+#### 注意
+- 成员变量具有默认值
+- 实例变量创建对象后默认是0
+- 静态变量直接具有默认值
+
 ### 对象的创建和使用
 - new 类名();
 - new 是一个运算符 作用是创建对象 在JVM堆内存中开辟新的内存空间 
@@ -536,8 +541,13 @@ public static void main(String[] args) {
 ![对象内存图](/pic/类和对象.png "对象")
 - u.address.city
 - ![引用](/pic/类2.png "引用详解")
+#### 注意
 - 字符串是引用数据类型 创建了Srting对象将地址保存给name 和new作用相同
 - 类里面的字符串属性都是引用
+- 引用数据类型默认值是null(空值)，不同于void（返回值类型）
+- null说明指针不指向任何数据，void指针实实在在地指向一块内存，只是不知道这块内存中是什么类型数据（void是返回值类型是空类型）
+- char默认值 \u0000  boolean默认值 false
+
 ### JVMM内存管理
 - ![JVM内存管理](/pic/JVM内存管理.png "内存")
 - 空指针异常 java.lang.NullPonterException 可以编译不能运行
