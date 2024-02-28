@@ -119,10 +119,11 @@ SUN提前设置 全小写
 - java中变量必须先声明再赋值才能访问
 - https://www.cnblogs.com/bigbigbird/p/11382561.html
 - https://www.zhihu.com/question/27639400/answer/489853106
-- 获取(get) println 修改(set) housePrice = 1；//运算右边赋值左边   int housePrice = 1；
+- 获取(get) println System.out.println()
+- 修改(set) housePrice = 1；//运算右边赋值左边   int housePrice = 1；
 - 作用域 变量的有效范围 同作用域只能有一个变量  
   局部变量 方法体中声明  
-  成员变量 方法体外**类体**内声明 **就近原则** 有默认值(0) char-\u0000(\u0020是空格)
+  成员变量 方法体外**类体**内声明 **就近原则** **有默认值**(0) char-\u0000(\u0020是空格)
 ## 数据类型 
 - 指导程序运行阶段分配多少空间
 ### 基本数据类型(Primitive Data Types)
@@ -247,19 +248,19 @@ int c = 0x10; //16进制
 
 ## 控制语句
 ### 选择结构
+#### if
 - if、if else
 - if(bool表达式){  
   };
 - if(bool表达式){  
   }else{  
   };
-- if(bool表达式){
-  }else if{
-  }else if{
-  }else{
+- if(bool表达式){  
+  }else if(){  
+  }else if(){  
+  }else(){  
   };
-- else if一个分支执行剩下的不执行  全是if分支全部执行
-~~~
+~~~java
 public class IfTest01
 {
   public static void main(Stringp[]) args{
@@ -284,8 +285,8 @@ public class Keyinputtest
   //第二步 调用Scanner对象的next方法开始接收用户的键盘输入
   //当程序执行到这里时会停下，等待用户输入
   //用户敲下回车键，输入的信息赋值给userInputContent
-    String userInputContent = s.next();
-  //以字符串的形式接受
+    String userInputContent = s.next();//以字符串的形式接受
+  
     int age = s.nextInt();//以整数的形式接收
   
   //判断年龄 幼儿少年 青少年 青年 中年
@@ -294,40 +295,38 @@ public class Keyinputtest
       str = "年龄不合法";
     }else if(age <= 5){
       str = "幼儿"；
-    }else if(ag  e <= 35){
-    str = "青年"；
+    }else if(age <= 35){
+      str = "青年"；
   }
-  System.out.pringln(str);
+    System.out.pringln(str);
   
   }
 }
 ~~~
+#### 总结
+- else if一个分支执行剩下的不执行  全是if分支全部执行
 - if中一条语句不加大括号 可以只有if,没有else 不能相反
-~~~
+~~~java
 boolean sex = true;
 if(sex) System.out.println("男"); else System.out.println("女")；
 ~~~
 
-
-- 第一步：java.util.Scanner S = new java.util.Scanner(System.in);
-- 第二步：string str = s.next();  int num = s.nextInt();
-
-## swich
-    switch(int/string){//也可以是byute short char 因为可以自动类型转换
-      case i:
-        java语句；
-        break；//到break终止 没有break直接进行下一个分支执行(不进行匹配，case穿透)
-      default :
-        java语句；//都不匹配则default
-    }
-### case 可以合并
-    int i  = 10;
-    switch(i){
-      case 1 : case 2: case 10；:
-      system.out.println("hw");
-    }
-- 
-## 循环结构
+#### swich
+switch(int/string){//也可以是byute short char 因为可以自动类型转换  
+  case i:  
+    java语句；  
+    break；//到break终止 没有break直接进行下一个分支执行(不进行匹配，case穿透)  
+  default:  
+    java语句；//都不匹配则default  
+}
+##### case 可以合并
+- int i  = 10;
+  switch(i){
+    case 1 : case 2: case 10；:
+    system.out.println("hw");
+  }
+  
+### 循环结构
 - for | while | do while
 - 循环体(要反复执行的代码) 计算器
 ### 变量的作用域
@@ -349,12 +348,12 @@ public static void main(String[] args){
 - 对象实例级变量就是成员变量，实例化后才会分配内存空间
 - 方法级变量就是在方法内部定义的变量-局部变量 作用域从它被声明的点开始，一旦出了自己的作用域马上从内存中消失
 - 块级变量就是定义在一个块内部的变量，变量的生存周期就是这个块，出了这个块就消失了，比如 if、for 语句的块。块是指由大括号包围的代码
-~~~
+~~~java
 public class Test{
     public static String name = "TEST"; // 类级变量
     public int i; // 对象实例级变量
     
-    // 属性块，在类初始化属性时候运行
+    // 属性块，在类初始化属性时运行
     {
         int j = 2;// 块级变量
     }
