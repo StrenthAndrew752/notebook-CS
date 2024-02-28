@@ -117,6 +117,8 @@ SUN提前设置 全小写
 - 变量是内存中一块空间，包含数据类型 变量名 字面值 （类型 字面值一致）
 - int housePrice,a,b；变量并未初始化也并未开辟空间，此时无法访问
 - java中变量必须先声明再赋值才能访问
+### 变量的定义，声明，初始化
+- https://worktile.com/kb/ask/37730.html
 - https://www.cnblogs.com/bigbigbird/p/11382561.html
 - https://www.zhihu.com/question/27639400/answer/489853106
 - 获取(get) println System.out.println()
