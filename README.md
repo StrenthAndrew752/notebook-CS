@@ -228,34 +228,36 @@ int c = 0x10; //16进制
 - 两边算子都要执行要用逻辑与
   system.out.println(X); // 10
 
-## 赋值运算符
+### 赋值运算符
 - 基本赋值运算符 =
 - 扩展运算符 不改变运算结果类型
 - +=(累进)  /=  %=(取余)
 - byte x =10;
 - x += 5;  //等同于x = (byte)(x+5) 不等于x = x + 5(int 赋值到 byte 不通过)
-## 字符串连接运算符 +
+  
+### 字符串连接运算符 +
 - +两边是数字 加法运算
 - +两边有一个字符串 字符串连接 返回字符串结果
 - system.out.println(a "+"+b+"="+(a+b));
-## 三元(条件)运算符
+
+### 三元(条件)运算符
 - char c = bool表达式 ? 表达式1 : 表达式2； c的类型和表达式类型一致
 - boolen sex = false;
 - char c = sex ? '男' : '女'；
-## 控制语句
-## 选择结构
-- if、if else
 
-- if(bool表达式){
+## 控制语句
+### 选择结构
+- if、if else
+- if(bool表达式){  
   };
-- if(bool表达式){
-  }else{
+- if(bool表达式){  
+  }else{  
   };
 - if(bool表达式){
   }else if{
   }else if{
   }else{
-  };<br>
+  };
 - else if一个分支执行剩下的不执行  全是if分支全部执行
 ~~~
 public class IfTest01
