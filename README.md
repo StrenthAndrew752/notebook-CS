@@ -377,12 +377,21 @@ public class Test{
     }
 }
 ~~~
-- 
-- for + if 找出1-100的奇数
+
 #### while
 ~~~
 while(bool表达式){
   循环体；
+}
+
+public static void main(String[] args)
+{
+  int i = 1;
+  while(i<=10)
+  {
+    System.out.println(i);
+    i++;
+  }
 }
 
 while(true){}//死循环
@@ -397,6 +406,32 @@ do{
 - 关键字+封号构成java语句
 - break 终止switch语句/循环语句 跳出最内层的循环
 - for+if+break 找质数
+
+~~~java
+//每八个一行显示100以内质数
+
+public static void main(String[] args){
+  int count = 0;
+  for(int i = 2; i<=100; i++){
+    boolean issushu = true;//标记思想 放在第一个循环，保证每一个数更新一次状态
+    for (int j = 2; j<i; j++){
+      if(i%j==0){
+        issushu = false;
+        break;//仅为了不接着做除法，自动到下一个数，不用else
+      }//这里可以不用else
+  }
+
+  if(issushu)
+  {
+    System.out.print(i+"\t");
+    count++;
+    if(count % 8 == 0)
+    {
+      System.out.print("\n");
+    }
+  }
+}
+~~~
   
 ### 总结
 - break 结束所在循环
