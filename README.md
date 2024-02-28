@@ -127,7 +127,7 @@ SUN提前设置 全小写
 - 指导程序运行阶段分配多少空间
 ### 基本数据类型(Primitive Data Types)
 - 整数型(byte,short,int,long) 浮点型(float,double) 布尔型(boolean) 字符型(cahr)  12484812byte(字节)
-- 取值范围  源码补码反码
+- 取值范围
 - 以补码存储
 - 正数补码相同 负数将正数取反+1
 - int 2147483647
@@ -169,49 +169,65 @@ SUN提前设置 全小写
 
 ### 整数型 byte short int long
 - int a = 10; 10默认int
-- 三种表示方式
-- int a = 10 / 3; 整数/整数=整数
-- int b = 010; //8进制
-- int c = 0x10; //16进制
-- system.out.println(c);
-- long z = 2147483648L //整数型字面值默认为int类型处理 添加L作为long 自动类型转换-小容量转换为大容量 int-long
+- 三种表示方式  
+int a = 10 / 3; 整数/整数=整数  
+int b = 010; //8进制  
+int c = 0x10; //16进制
+#### 自动类型转换
+- 小容量-大容量 **隐式**
+- byte b = 3;  
+  int x = b;
+- 整数型之间转换
+- 整数型-浮点型
+
+#### 强制类型转换
 - 大容量-小容量 强制类型转换符 强制删去左侧二进制位
-- Long x = 100;
-- int y = (int)x;
+- 数字前加上括号，括号中写上要转换的类型  
+  Long x = 100;  
+  int y = (int)x;
+- 数字的后面直接加上要转换的类型的第一个字母  
+  long z = 2147483648L //**整数型字面值默认为int类型处理** 添加L作为long
 - byte b = 50； byte不超过127可以不用强制类型转换符  包括short char
 - 浮点型 float double 存储近似值 
-- 引用数据类型 java.math.BigDecimal
-- Java SE 类库 jre\lib\rt.jar  //JavaSE自带的类 String System
-- 类库源码 src.zip
-- double d = 3.0; 浮点型默认float
+- 引用数据类型 java.math.BigDecimal  
+  Java SE 类库 jre\lib\rt.jar  //JavaSE自带的类 String System  
+  类库源码 src.zip
+- double d = 3.0; **浮点型默认double**
 - float f = 3.0f;   float f = (float)3.0;
-- 布尔型 boolean
+  
+#### 布尔型 boolean
 - 只有 true false 两个值 底层用01存储
 - boolean login = true;
-- 转换规则
+
+#### 总结
 - 除bool数据类型都能互相转换 char c = 97;
 - 任意浮点型都比整数型容量大
 - 多种数据类型混合运算 先转换成容量最大的类型再运算
-- byte short char 先转换成int运算
-# 运算符
-- 算数运算符 + - * / %(取余) ++(自加一) --
+- byte chort char 类型会参与运算时，结果会自动转化为int类型
+  
+## 运算符
+### 算数运算符
+- + - * / %(取余) ++(自加一) --
 - 优先级 加()
 - ++x/x++ 单目运算符
 - int b = a ++ 先赋值 再a+1
 - int b = ++ a 先➕1再赋值
 - system.out.println(s--);  x=s-- 打印s再s=s-1
-- 关系运算符 > >= == !=       =是赋值运算符<br>
-  运算结果bool型
-- 逻辑(bool)运算符
+  
+### 关系运算符 
+- > >= == != （=是赋值运算符）
+- 运算结果bool型
+  
+### 逻辑(bool)运算符
 - & | !(单目 !false) ^(异或 两边算子不一样就是真) &&(短路与 和与结果相同但存在短路现象) ||(短路或)
 - 两边算子bool，最终结果bool
 - system.oyt.println((5 > 3) | (5 > 6)); //true
-- int x = 10;
-- int Y = 8;
-- system.out.println( x < Y && ++x < Y); //短路与 第一个出现false则第二个表达式不执行
+- int x = 10;  
+  int Y = 8;  
+  system.out.println( x < Y && ++x < Y); //短路与 第一个出现false则第二个表达式不执行  
 - 两边算子都要执行要用逻辑与
-- system.out.println(X); // 10
-- || 短路或
+  system.out.println(X); // 10
+
 ## 赋值运算符
 - 基本赋值运算符 =
 - 扩展运算符 不改变运算结果类型
