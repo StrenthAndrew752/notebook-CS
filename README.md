@@ -480,12 +480,18 @@ public static void main(String[] args){
 - 方法自身调用自身 耗费栈内存 不断压栈 可能栈内存溢出错误 stack overflow error
 ~~~java
 //1-N 的和
-public static void sumN(int n){
+public static int sumN(int n){
   if(n == 1){
     return 1;
   }
   return n + sum(n-1);
 }
+
+public static void main(String[] args) {
+  int n = 4;
+  System.out.println(sumN(n));
+}
+
 ~~~
 ![递归方法调用内存图](/pic/递归1.png "递归")
 ## 面向对象
