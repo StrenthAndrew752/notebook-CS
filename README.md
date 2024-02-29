@@ -505,7 +505,7 @@ public static void main(String[] args) {
 - 面向对象的设计  OOD
 - 面向对象的开发  OOP
 
-### 类和对象
+## 类和对象
 类是对象的共同特征 描述状态和动作
 对象(instance)是实际存在的个体
 - 类-实例化--对象
@@ -534,7 +534,7 @@ public static void main(String[] args) {
 - new 类名();
 - new 是一个运算符 作用是创建对象 在JVM堆内存中开辟新的内存空间 
 - student s = new student();
-- s 是一个局部变量，**保存对象的内存地址** (通过赋值)【可以是局部变量(main内)也可以是实例变量(address属性)】，叫引用。堆内存中开的内存空间叫对象 **赋值时右边内存地址赋值给左边**
+- s 是一个局部变量，**保存对象的内存地址** (通过赋值)【可以是局部变量(main内)也可以是实例变量(address属性)】，叫**引用**。堆内存中开的内存空间叫对象 **赋值时右边内存地址赋值给左边**
 - 通过引用访问堆内存中的对象内部的实例变量 不同于C语言用指针操作内存空间
 - 读取 s.no 修改 s.no = 1
 - 修改实例变量不影响下一次调用对象的实例变量 实例变量在堆内存的java对象内部存储
@@ -556,6 +556,8 @@ public static void main(String[] args) {
 - c = null;
 - System.out.println(c);//如果一个对象为null，调用其方法或访问其字段就会产生NullPointerException
 ## Java集成开发环境 IDE
+- Integrated Development Environment
+- IDE是一种应用程序，它提供了一个统一的界面来编写(打包)、调试、编译和执行代码。
 - 没有IDE需要安装JDK，配置环境变量，手动编译，没有错误提示
 - eclipse
 -  workspace 工作区 存放java代码(src)和编译.class(output/bin)
@@ -565,27 +567,35 @@ public static void main(String[] args) {
 - console 控制台窗口
 - P125 project配置 包(package)机制
 
-### 封装
+## 封装
 - 对外提供简单的操作入口
 - 封装后产生真正的对象，独立体
 - 安全级别高 否则随意读取修改
 
 #### 属性私有化
-- private int age; //只能在本类访问 外部无法 对象.属性 访问
+- private int age; //只能在本类访问，外部无法访问，对象.属性 访问
+- 成员变量声明为private，通过public方法访问
+  
 #### 对外提供简单操作入口
-~~~
-public void setAge(int a){age = a;}
-public int setAge(int age){
+~~~java
+public int getAge(){
+  return age;
+}
+
+public void setAge(int age){
   //安全过滤
   if(a < 0 || a >150){
     System.out.println("不合法");
     return;
   }
-  this.age = age // 还有super();
+  this.age = age
+//还有super();
 }
 ~~~
+
 - 没有static修饰的方法调用: **引用.方法名(实参);** CP类.方法
-### 构造方法
+  
+## 构造方法
 - 构造方法/函数/构造器/Constructor
 - [修饰符列表] 构造方法名 (形参){构造方法体} //构造方法名和类名一致
 - 没有返回值类型 有了变为普通方法 因为返回值类型就是类本身
@@ -595,7 +605,8 @@ public int setAge(int age){
 - 类中没构造方法有默认构造方法 缺省构造器
 - 无参数 有参数构造方法都要写 用到重载 public User(){} public User(int i){}
 ### 构造对象的同时初始化实例变量
-- 构造方法创建对象 同时初始化实例变量（不在类加载的时候而在构造方法执行过程中）
+- **构造方法创建对象 同时初始化实例变量**（不在类加载的时候而在构造方法执行过程中）
+#### eclipse 快捷键
 - ctrl 鼠标移动到要查看的属性/方法
 - ctrl + O 查看类中所有方法
 - 块编辑
