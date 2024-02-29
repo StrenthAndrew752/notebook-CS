@@ -577,6 +577,7 @@ public static void main(String[] args) {
 - 成员变量声明为private，通过public方法访问
   
 #### 对外提供简单操作入口
+- 项目是mavan可以导入jdr包实现属性的封装
 ~~~java
 public int getAge(){
   return age;
