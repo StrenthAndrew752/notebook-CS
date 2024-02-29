@@ -686,25 +686,33 @@ this(00001,"张三")；
 #### static 代码块
 - static{java语句；}
 - **类加载时**执行（main方法前） 一个类中可编写多个 自上而下依次执行
+- 静态代码块这种语法机制实际上是sun公司给我们java程序员的一个特殊的时刻/时机，这个时机叫：类加载时机。
 - 类加载到JVM时记录日志
 #### 实例方法快
 - 构造方法执行前执行(**对象初始化**时机) 在类中，构造函数外
+- un公司为java程序员准备的一个特殊的时机，叫做对象构建时机。
 - {java语句;}
 
-### 继承
+#### 总结
+- 静态代码块，在虚拟机加载类的时候就会加载执行，而且只执行一次;
+- 非静态代码块，在创建对象的时候(即new一个对象的时候)执行，每次创建对象都会执行一次
+- https://www.cnblogs.com/lukelook/p/11183155.html
+- 一个程序可以有多个静态非静态代码区域。
+
+## 继承
 - 封装产生独立体
 - 继承是为了代码复用 方法覆盖和多态机制
-#### 继承机制
-- 私有的数据，构造方法不支持继承 其他数据都可以支持
+### 继承机制
+- 私有的数据(属性,方法)，构造方法不支持继承 其他数据都可以支持
 - 语法格式：
 ~~~
 [修饰符表] class 类名 extends 父类名{
   类体 = 属性 + 方法
 }
 public class CreditAccount extends Account{
-  //继承private account，balance，通过继承的get set调用
+//继承private account，balance，通过继承的get set调用
   private double credit;
-  //构造+读改
+//构造+读改
   public CreditAccount(){
     super();
   }
@@ -726,37 +734,54 @@ public class CreditAccount extends Account{
 - A extends T{}
 - C直接继承B 间接继承T A
 - 没有显示继承任何类则默认继承JDK javaSE库中的java.Lang.object类(所有类都继承这个类)
-- Extendtest et = new Extendtest();
-- String s = et.toString();
+- Extendtest et = new Extendtest();  
+  String s = et.toString();
 #### 查找类型【open type】C+S+T
 #### 查找资源【open resource】C+S+R 当前项目下(src)文件
 ### 方法覆盖 override (方法重写)
 - 父类中方法无法满足子类的业务需求
-- 返回值类型 方法名 形参列表相同
+- **返回值类型 方法名 形参列表**相同
 - 访问权限不能更低 只能更高 public private protected
 - 抛出异常不能更多只能更少 public void move() throws Exception{}
+  
 #### 注意
 - 私有方法，构造方法没有继承 不能覆盖
-- 静态方法不存在覆盖
-- 覆盖只针对方法不针对属性
+- - 覆盖只针对方法不针对属性
+#### 静态方法不存在覆盖，也就不存在多态
+- 如果子类里面定义了同名静态方法和属性，那么这时候父类的静态方法或属性称之为"隐藏"
+- https://blog.csdn.net/u010412719/article/details/49254017
+#### static方法的内存空间子类也可操作
+- Parent child=new Son();  
+  child.staticMethod();//输出：Parent staticMethod run
 
-### 多态
-- 向上转型（upcasting）子类型转换为父类型 自动类型转换（bool外七种都可）**必须有继承关系**
-- 向下转型（downcasting）父 - 子 强制类型转换 **必须有继承关系** 
-- animl a = new cat(); **父类型引用指向子类型对象** cat is a animal
+#### 声明为static的方法有以下几条限制：
+- 它们仅能调用其他的static 方法。  
+- 它们只能访问static数据。  
+- 它们不能以任何方式引用this 或super。
+  
+## 多态
+- 多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定
+- 这样，不用修改源程序代码，就可以让引用变量绑定到各种不同的类实现上，从而导致该引用调用的具体方法随之改变，即不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态，这就是多态性。
+  
+#### 向上转型（upcasting）
+- 子类型转换为父类型 自动类型转换（bool外七种都可）**必须有继承关系**
+- - animl a = new cat(); **父类型引用指向子类型对象** cat is a animal
 - a.catchMouse() ✖️ 只能访问animal中的方法 编译不通过
 - **a.move()**
 - Animal.class 字节码中有move方法，编译通过。这过程称为静态绑定，编译阶段绑定
 - a的底层（堆内存）对象是cat 运行时调用cat的方法。这过程称为动态绑定，运行阶段绑定
 - 无论有没有重写move，运行阶段都是调用cat对象的move
 - 父类型引用指向子类型对象这种机制导致程序在编译阶段和运行阶段绑定两种不同的形态/状态 - 多态
+  
+#### 向下转型（downcasting）
+- 父 - 子 强制类型转换 **必须有继承关系** 
 #### 调用子类型中特有方法需要向下转型
 -  Cat b = (Cat)a;//类似long x = 100L; int i = (int)x
 -  b.catchMouse();
--  Animal a3 = new bird();Cat c3 = (Cat)a3; ✖️
--  **ClassCastException** 必须有继承关系 出现在向下转型
--  编译时通过 cat animal 继承关系，向下转型 运行行不通过 因为真实存在的对象是bird类型，而不是animal
--  java规范强制类型转换前 使用instanceof运算符避免异常
+-  Animal a3 = new bird();Cat c3 = (Cat)a3; ✖️  
+  **ClassCastException** 必须有继承关系 出现在向下转型  
+  编译时通过 cat animal 继承关系，向下转型 运行行不通过 因为真实存在的对象是bird类型，而不是animal  
+  java规范强制类型转换前 使用instanceof运算符避免异常
 #### 引用 instanceof 数据类型名) 执行结果布尔类型
 -  a instance of Animal; true - a这个引用指向的对象是一个Animal类型
 -  当a3引用指向的对象是一个Cat时
@@ -766,24 +791,29 @@ public class CreditAccount extends Account{
       Bird b2 = (Bird)a3;
       Bird.fly();
    }
-#### 解耦合
+   
+## 解耦合
 - 降低程序耦合度，提高程序扩展力
 - master cat 新加dog类不对master类中方法有影响 master只和pet有联系，只面向抽象的pet
-- public void Master{
-    Public void feed(Pet pet){//相当于Pet pet = new cat()
-      pet.eat();//
-    }
+  
+~~~java
+public void Master{
+  Public void feed(Pet pet){//相当于Pet pet = new cat()
+    pet.eat();
   }
-- public void Test{
+}
+public void Test{
   public static void main(String[] args){
     Master Zhangsan = new Master();
     Zhangsan.feed(new Cat());//参数传递到feed方法相当于Pet pet = new cat()
-    //也就是父类型引用指向子类型变量 编译阶段调用pet的方法，运行阶段调用对象的方法
-    //Cat Tom = new Cat(); Zhangsan.feed(tom);
+
+//也就是父类型引用指向子类型变量 编译阶段调用pet的方法，运行阶段调用对象的方法
+//Cat Tom = new Cat(); Zhangsan.feed(tom);
     
   }
 }
-- 
+~~~
+
 #### 断点调试 P153
 - 双击一行(表示执行到这行上面，不包括这行)，右键 debug as F5 678
 - resume 终止
