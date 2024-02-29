@@ -639,7 +639,7 @@ public class Customer{
   
 }
 ~~~
-- System.out.pringln(this.name + "在购物")
+
 #### 创建两个customer对象
 - ![this1](/pic/this1.png)
 - 一个对象一个this 
