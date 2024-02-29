@@ -593,7 +593,7 @@ public void setAge(int age){
 //还有super();
 }
 ~~~
-
+#### super
 - 没有static修饰的方法调用: **引用.方法名(实参);** CP类.方法
   
 ## 构造方法
