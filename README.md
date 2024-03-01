@@ -59,9 +59,10 @@ del *class
 - 垃圾回收机制（GC） 没有引用指向对象
 - 可移植性（跨平台） 一次编译 到处运行（从windows到linux）  java代码运行在JVM（java虚拟机），而不和操作系统追鹅交互
 ### java加载和运行
--  .java(源文件，在硬盘)-.class(编译通过则使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   //javac 路径
+-  .java(源文件，在硬盘)-.class(编译通过则使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   //javac Hw.java
 -  编译只检查语法不运算 byte b = i（int 10 / 3 (错) 
 -  java.exe 运行 // A.class - java A  // JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
+#### javac启动编译器，java启动JVM
 -  JRE(包括JVM)  java runtime envoronment 运行环境
 -  JDK(自带JRE)给开发 JRE给客户（内存小）
 -  JDK > JRE >JVM
@@ -679,16 +680,20 @@ this(00001,"张三")；
 ### static
 - 实例变量 每个对象都保存这块内存空间 浪费内存
 - 静态变量存储在方法区内存中 在**类加载**时初始化 不需要创建对象 内存就开辟了
-- static String country(国籍) **可以加private吗**
-- static修饰的元素 可以类名.也可以引用.
+- static String country(国籍)
+- static修饰的元素 可以类名.也可以引用.  任何的实例都可以调用，因此静态方法中不能用this和super关键字
 - static方法无法访问实例方法和实例对象
 - 大多数工具类的方法是静态方法(+ — * / print) 因为工具类是方便编程 不需要new对象
-#### static 代码块
+#### private static
+- 如果你的私有函数没有访问类里面的其他参数和方法，又被频繁调用，那就把他设为private static吧
+- 被private static修饰的属性只能被本类中的方法(可以是非静态的)调用，在外部创建这个类的对象或者直接使用这个类访问都是非法的(public static可以)
+
+## static 代码块
 - static{java语句；}
 - **类加载时**执行（main方法前） 一个类中可编写多个 自上而下依次执行
 - 静态代码块这种语法机制实际上是sun公司给我们java程序员的一个特殊的时刻/时机，这个时机叫：类加载时机。
 - 类加载到JVM时记录日志
-#### 实例方法快
+### 实例方法快
 - 构造方法执行前执行(**对象初始化**时机) 在类中，构造函数外
 - un公司为java程序员准备的一个特殊的时机，叫做对象构建时机。
 - {java语句;}
@@ -702,6 +707,8 @@ this(00001,"张三")；
 ## 继承
 - 封装产生独立体
 - 继承是为了代码复用 方法覆盖和多态机制
+#### 通过继承，子类就可以获得了父类方法的地址信息并把这些信息保存到自己的方法区，这样就可以通过子类对象访问自己的方法区从而间接的访问父类的方法（重写的话，就直接访问子类自己重写后的方法）
+
 ### 继承机制
 - 私有的数据(属性,方法)，构造方法不支持继承 其他数据都可以支持
 - 语法格式：
@@ -743,7 +750,7 @@ public class CreditAccount extends Account{
 - **返回值类型 方法名 形参列表**相同
 - 访问权限不能更低 只能更高 public private protected
 - 抛出异常不能更多只能更少 public void move() throws Exception{}
-  
+
 #### 注意
 - 私有方法，构造方法没有继承 不能覆盖
 - - 覆盖只针对方法不针对属性
@@ -787,13 +794,16 @@ public class CreditAccount extends Account{
 - a instance of Animal; true - a这个引用指向的对象是一个Animal类型
 - 测试它左边的对象是否是它右边的类的实例
 - 当a3引用指向的对象是一个Cat时
-- if(a3 instance of Cat){  
-    Cat c3 = (Cat)a3;//再做强制类型转换  
-  }else if(a3 instanceof Bird){  
-    Bird b2 = (Bird)a3;  
-    Bird.fly();  
-   }
-   
+~~~java
+
+if(a3 instance of Cat){
+  Cat c3 = (Cat)a3;//再做强制类型转换
+}else if(a3 instanceof Bird){
+  Bird b2 = (Bird)a3;
+  Bird.fly();
+}
+
+~~~
 ## 解耦合
 - 降低程序耦合度，提高程序扩展力
 - master cat 新加dog类不对master类中方法有影响 master只和pet有联系，只面向抽象的pet
@@ -804,6 +814,7 @@ public void Master{
     pet.eat();
   }
 }
+
 public void Test{
   public static void main(String[] args){
     Master Zhangsan = new Master();
@@ -811,12 +822,12 @@ public void Test{
 
 //也就是父类型引用指向子类型变量 编译阶段调用pet的方法，运行阶段调用对象的方法
 //Cat Tom = new Cat(); Zhangsan.feed(tom);
-    
+
   }
 }
 ~~~
 
-#### 断点调试 P153
+## 断点调试 P153
 - 双击一行(表示执行到这行上面，不包括这行)，右键 debug as F5 678
 - resume 终止
 
@@ -844,26 +855,32 @@ public void Test{
 - u = new User(50) ✖️
 - 对象内部内存可以修改 u.id = 50;
 
-### 包和import
+#### 总结
+- 父类中staitic修饰的静态方法，不能覆盖、不能继承，也无法表现出多态
+- 父类中staitic修饰的变量或常量，能覆盖、不能继承
+- 父类中final修饰的方法，不能覆盖，但可继承
+
+## 包和import
 - 不同功能的类放到不同的包
 - 程序第一行(不包括注释)编写package语句
 - Package 包名
 - 包名：公司域名倒序 + 项目名 + 模块名 + 功能名//重名几率低 全小写
-- com.bjpowernode.oa.service;
+- package com.bjpowernode.oa.service;
 - 一个包对应一个目录 这里四个
-- package com.bjpowernode.oa.service.day11;
-- 如何编译运行这个包下的类？  
-在第一层目录下cmd(day11-2)  
-javac *.java  
-java com.bjpowernode.oa.service.day11.Test01  
+#### 如何编译运行这个包下的类？  
+  在第一层目录下cmd(day11-2)  
+  javac *.java  
+  java com.bjpowernode.oa.service.day11.Test01  
 （需要把Test101.class放在第四层目录下才能运行）
 #### 另一种方式
-- javac -d 编译后存放的路径 java源文件的路径
-- javac -d C:\ F:\Hello.java  //将F:\Hello.java编译后放到C:\目录下
-#### 在第一层目录下cmd java -d . *.java
+javac -d 编译后存放的路径 java源文件的路径
+- javac -d C:\ F:\Hello.java
+- 将F:\Hello.java编译后放到C:\目录下
+#### 在第一层目录下cmd javac -d . *.java
 - 当前路径中 *.java编译后放到当前目录下
 - 自动创建目录
-~~~
+
+~~~java
 
 package com.bjpowernode.javase.day11;
 
@@ -873,14 +890,15 @@ public class Test02{
   public static void main(String[] args){
     com.bjpower.node.javase.day11.test01 t = new com.bjpower.node.javase.day11.test01();
     System.out.println(t);
-    Test01 tt = test01 //类在同一个包下 包名可省略
+    Test01 tt = new test01() //类在同一个包下 包名可省略
     //不同则import导入类 写在package语句下class语句上
     //import com.bjpowernode.javase.day11.test01;
-    //import import com.bjpowernode.javase.day11.*;
+    //import com.bjpowernode.javase.day11.*;
   }
 }
-java -d . *.java
+javac -d . *.java
 ~~~
+
 - java lang包是核心包不需要导入 包括String
 - java.util.Date d = new java.util.Date();//工具类
 - import java.util.*;
@@ -889,10 +907,11 @@ java -d . *.java
 ### 访问控制权限修饰符
 - 控制元素的访问范围
 - public      公开的 任何位置都可访问
-- protected   同包，子类
+- protected   同包 + 子类
 - 缺省         同包
 - private     私有的，只能在本类访问
 - private < 缺省 < proetcted < public
+#### https://blog.csdn.net/qq_32907195/article/details/110631855
 - 类只能public/缺省 【内部类除外】
 - 
 
