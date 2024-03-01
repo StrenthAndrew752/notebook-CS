@@ -741,6 +741,19 @@ public class CreditAccount extends Account{
 - B继承A
 - B 父类 基类 超类 superclass
 - A 子类 派生类 subclass
+
+### super
+- super 指向离自己最近的一个父(超)类对象
+- super.变量名 super.成员函数据名（实参）
+- 每个子类构造方法的第一条语句，都是隐含地调用 super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。
+- super() 和 this() 均需放在构造方法内第一行，均不可以在 static 环境中使用，包括：static 变量,static 方法，static 语句块。
+#### this 和 super 不能同时出现在一个构造函数里面
+- 如果this()和super()都存在,那么就会出现:初始化父类两次的不安全操作，因为当super()和this()同时出现的时候，在调用完了super()之后 还会执行this()，而this()中又会自动调用super(),这就造成了调用两次super()的结果。
+- 如果你继承的父类没有无参数构造函数，那么你这个类第一句必须显示的调用super关键字,来调用父类对应的有参构造函数，否则不能通过编译。
+- https://blog.csdn.net/qq_42848910/article/details/104481271
+- https://www.runoob.com/w3cnote/the-different-this-super.html
+
+
 #### 间接继承多个类
 - c extends B{}
 - B extends A{}
@@ -851,8 +864,8 @@ public void Test{
     this.age = 1
 - }//两种方法都在构造方法执行时给实例变量赋值，时间相同
 #### 常量
-- final 修饰的变量不可变 一般与static联合使用(节约内存) 称为常量
-- public static final GUO_JI = "中国";
+- final 修饰的变量不可变，称为常量。一般与static联合使用(节约内存)
+- **public static final** GUO_JI = "中国";
 - 常量名字全大写 下划线连接
 - 类名.调用 Math.PI
 
@@ -919,6 +932,41 @@ javac -d . *.java
 - private < 缺省 < proetcted < public
 #### https://blog.csdn.net/qq_32907195/article/details/110631855
 - 类只能public/缺省 【内部类除外】
+#### 内部类
+~~~java
+
+//不使用static修饰内部类
+//内部类没有使用static关键字，不能直接创建实例。
+public class OuterClass {
+    public class InnerClass{
+        InnerClass(){}
+    }
+}
+
+public class TestStaticClass {
+    public static void main(String[] args) {
+        // OutClass需要先生成一个实例
+        OuterClass oc = new OuterClass();
+        oc.new InnerClass();
+    }
+}
+
+
+//使用static修饰内部类
+public class OuterClass {
+    public static class InnerClass{
+        InnerClass(){}
+    }
+}
+
+public class TestStaticClass {
+    public static void main(String[] args) {
+        // OutClass 不需要生成实例
+        new OuterClass.InnerClass();
+    }
+}
+
+~~~
 - 
 
 
