@@ -668,10 +668,16 @@ public class Customer{
 #### this使用在构造方法
 - 通过当前构造方法调用其他的构造方法 this(实参) 只能出现在构造函数第一行
 ~~~
-public Customer(int id, String name){this.id = id;this.name = name;}
+public Customer(int id, String name)
+  {this.id = id;
+  this.name = name;
+  }
+
 public Customer(){
+
 //int id = 000001; String name = "张三"; 可以通过调用另一个构造方法完成
-this(00001,"张三")；
+  this(00001,"张三")；
+
 //new Customer(00001,"张三");  不能采用这种方法 因为当调用构造方法时会new两次
 }
 ~~~
