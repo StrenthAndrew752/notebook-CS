@@ -782,14 +782,16 @@ public class CreditAccount extends Account{
   **ClassCastException** 必须有继承关系 出现在向下转型  
   编译时通过 cat animal 继承关系，向下转型 运行行不通过 因为真实存在的对象是bird类型，而不是animal  
   java规范强制类型转换前 使用instanceof运算符避免异常
-#### 引用 instanceof 数据类型名) 执行结果布尔类型
--  a instance of Animal; true - a这个引用指向的对象是一个Animal类型
--  当a3引用指向的对象是一个Cat时
--  if(a3 instance of Cat){
-     Cat c3 = (Cat)a3;//再做强制类型转换
-   }else if(a3 instanceof Bird){
-      Bird b2 = (Bird)a3;
-      Bird.fly();
+#### instanceof
+- 引用 instanceof 数据类型名 执行结果布尔类型
+- a instance of Animal; true - a这个引用指向的对象是一个Animal类型
+- 测试它左边的对象是否是它右边的类的实例
+- 当a3引用指向的对象是一个Cat时
+- if(a3 instance of Cat){  
+    Cat c3 = (Cat)a3;//再做强制类型转换  
+  }else if(a3 instanceof Bird){  
+    Bird b2 = (Bird)a3;  
+    Bird.fly();  
    }
    
 ## 解耦合
