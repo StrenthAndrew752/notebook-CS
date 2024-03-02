@@ -165,7 +165,10 @@ SUN提前设置 全小写
   char c = '\u0041';  //ASCII字符占据Unicode字符集中前127个值
   char c = 0x41; //十六进制，等海于0x0041  
   char c = 65;
-  char-int char c = '\u0041';int f = c; f=65
+- char-int 类型转换
+- char c = '\u0041';  
+  int f = c;  
+  结果 f=65
   
 - 字符转义序列  
   char c2 = '\n' 换行符  '\t'制表符  '\r'回车  '\\'反斜杠  '\f'换页  '\b'退格  
@@ -195,7 +198,7 @@ int c = 0x10; //16进制
 - byte b = 50； byte不超过127可以不用强制类型转换符  包括short char
 - 浮点型 float double 存储近似值 
 - 引用数据类型 java.math.BigDecimal  
-  Java SE 类库 jre\lib\rt.jar  //JavaSE自带的类 String System  
+  Java SE 类库 jre\lib\rt.jar  类的字节码文件 //JavaSE自带的类 String System  
   类库源码 src.zip
 - double d = 3.0; **浮点型默认double**
 - float f = 3.0f;   float f = (float)3.0;
@@ -342,7 +345,7 @@ for(初始化表达式；布尔表达式；更新表达式){
 }
 初始化表达式(仅一次)-bool(true-循环体-更新 false-结束)
 public static void main(String[] args){
-  int i; //先定义再声明
+  int i; //先声明再定义(初始化) 声明在头文件，定义在源文件
   for(i = 1; i<=10; i++){
     System.out.println(i);
   }
@@ -685,7 +688,7 @@ public Customer(){
 //new Customer(00001,"张三");  不能采用这种方法 因为当调用构造方法时会new两次
 }
 ~~~
-- P143 省略类名/this
+
 
 ### static
 - 实例变量 每个对象都保存这块内存空间 浪费内存
@@ -693,6 +696,7 @@ public Customer(){
 - static String country(国籍)
 - static修饰的元素 可以类名.也可以引用.  任何的实例都可以调用，因此静态方法中不能用this和super关键字
 - static方法无法访问实例方法和实例对象
+- 实例方法访问static方法可直接调用
 - 大多数工具类的方法是静态方法(+ — * / print) 因为工具类是方便编程 不需要new对象
 #### private static
 - 如果你的私有函数没有访问类里面的其他参数和方法，又被频繁调用，那就把他设为private static
@@ -794,7 +798,7 @@ act.setAccountno("act-001");
   s.staticMethod();//输出：Parent staticMethod run
 
 #### 声明为static的方法有以下几条限制：
-- 它们只能直接访问static数据。  
+- 它们只能直接访问static数据，非static创建对象 
 - 它们不能以任何方式引用this 或super。
   
 ## 多态
