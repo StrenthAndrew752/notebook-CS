@@ -45,6 +45,7 @@ this
   javadoc注释 /**  
                *  
                   */ 通过bin下 javadoc.exe生成帮助文档 鼠标停留有信息
+- **根目录***在文件系统建立时即已被创建，其目的就是存储子目录
 ### DOS命令
 dir  
 cd Desktop （change direcroty）  
