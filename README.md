@@ -862,9 +862,14 @@ public void Test{
 }
 ~~~
 
-## 断点调试 P153
-- 双击一行(表示执行到这行上面，不包括这行)，右键 debug as F5 678
-- resume 终止
+## 断点调试 P153-38'
+- 右键设置断点 debug as / java application
+- 双击一行 设置断点(表示执行到这行上面，不包括这行)
+- F5 step into 进入方法
+- F6 step over 下一步
+- F7 step return 退出方法
+- F8 resume 下一个断点
+- terminate 强行终止 关闭java虚拟机
 
 ### final
 - P155 源码链接方法 类库：源码 字节码 帮助文档
@@ -880,7 +885,7 @@ public void Test{
     this.age = 1
 - }//两种方法都在构造方法执行时给实例变量赋值，时间相同
 #### 常量
-- final 修饰的变量不可变，称为常量。一般与static联合使用(节约内存)
+- final 修饰的变量不可变，一般与static联合使用(节约内存)，称为常量
 - **public static final** GUO_JI = "中国";
 - 常量名字全大写 下划线连接
 - 类名.调用 Math.PI
@@ -942,7 +947,7 @@ javac -d . *.java
 ### 访问控制权限修饰符
 - 控制元素的访问范围
 - public      公开的 任何位置都可访问
-- protected   同包 + 子类
+- protected   同包 + 子类（包外子类可用父类不可）（包外子类继承了父类型的实例方法，但只能子类对象访问）
 - 缺省         同包
 - private     私有的，只能在本类访问
 - private < 缺省 < proetcted < public
