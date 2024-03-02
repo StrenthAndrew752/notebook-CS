@@ -222,6 +222,7 @@ int c = 0x10; //16进制
 ### 关系运算符 
 - < <= == != （=是赋值运算符）
 - 运算结果bool型
+- == 对于基本类型来说是值比较，对于引用类型来说是比较的是引用；而**equals**默认情况下是引用比较，只是很多类重新了equals 方法，比如String、Integer 等把它变成了值比较
   
 ### 逻辑(bool)运算符
 - & | !(单目 !false) ^(异或 两边算子不一样就是真) &&(短路与 和与结果相同但存在短路现象) ||(短路或)
@@ -592,7 +593,6 @@ public void setAge(int age){
     return;
   }
   this.age = age
-//还有super();
 }
 ~~~
 #### super
@@ -648,18 +648,21 @@ public class Customer{
 #### this使用在实例方法 可省略
 - 没有static 的方法是实例方法，**必须有对象的参与** 引用.调用
 - 带static的方法通过类名.访问 不能使用this 也不能调用实例变量（**带static方法不能访问 this.name**）
-- static方法不能直接访问实例变量和实例方法 不带static可以嵌套 P139
+- static方法不能直接访问实例变量和实例方法，可以创建对象后访问
 #### this用来区分实例变量和局部变量
 ~~~
 public class Customer{
   private int id; //实例变量
+
   //构造方法
   public void SetId(int id){
+    super();
     this.id = id;
   }
   public int GetId(){
     return id; //这里不用this 因为实例方法
   }
+
   //构造方法
   public Customer(int id){
     this.id = id;
@@ -692,7 +695,7 @@ public Customer(){
 - static方法无法访问实例方法和实例对象
 - 大多数工具类的方法是静态方法(+ — * / print) 因为工具类是方便编程 不需要new对象
 #### private static
-- 如果你的私有函数没有访问类里面的其他参数和方法，又被频繁调用，那就把他设为private static吧
+- 如果你的私有函数没有访问类里面的其他参数和方法，又被频繁调用，那就把他设为private static
 - 被private static修饰的属性只能被本类中的方法(可以是非静态的)调用，在外部创建这个类的对象或者直接使用这个类访问都是非法的(public static可以)
 
 ## static 代码块
@@ -714,7 +717,9 @@ public Customer(){
 ## 继承
 - 封装产生独立体
 - 继承是为了代码复用 方法覆盖和多态机制
-#### 通过继承，子类就可以获得了父类方法的地址信息并把这些信息保存到自己的方法区，这样就可以通过子类对象访问自己的方法区从而间接的访问父类的方法（重写的话，就直接访问子类自己重写后的方法）
+#### 通过继承，子类就可以获得了父类方法的地址信息并把这些信息保存到自己的方法区，这样就可以通过子类对象访问自己的方法区从而间接的访问父类的方法
+#### 重写的话，就直接访问子类自己重写后的方法，方法表中原先存父类method01方法的引用被改写成子类的method01方法的引用
+#### 静态方法的调用的是通过在编译器静态绑定的，而实例方法的调用是在运行时动态绑定的，2者的调用的方式不同，所以二者只能存在其一，否则会存在歧义！
 
 ### 继承机制
 - 私有的数据(属性,方法)，构造方法不支持继承 其他数据都可以支持
@@ -723,19 +728,27 @@ public Customer(){
 [修饰符表] class 类名 extends 父类名{
   类体 = 属性 + 方法
 }
+//账户信息
+public class Account{
+
+private accountno;
+private balance;
+
+}
+
+//信用账户
 public class CreditAccount extends Account{
-//继承private account，balance，通过继承的get set调用
+
+//继承private account，balance，通过继承的public get，set调用
   private double credit;
-//构造+读改
-  public CreditAccount(){
-    super();
-  }
-  public double getCredit(){
-    return credit;
-  }
-  public void setCredit(double credit){
-    this.credit = credit;
-  }
+
+}
+
+public static void main(String[] args){
+
+CreditAccount act = new CreditAccount();
+act.setAccountno("act-001");
+
 }
 ~~~
 - java只支持单继承 一个类不能继承很多类
@@ -746,12 +759,11 @@ public class CreditAccount extends Account{
 ### super
 - super 指向离自己最近的一个父(超)类对象
 - super.变量名 super.成员函数据名（实参）
+- **构造方法 super(); / super(name)**
 - 每个子类构造方法的第一条语句，都是隐含地调用 super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。
-- super() 和 this() 均需放在构造方法内第一行，均不可以在 static 环境中使用，包括：static 变量,static 方法，static 语句块。
-#### this 和 super 不能同时出现在一个构造函数里面
-- 如果this()和super()都存在,那么就会出现:初始化父类两次的不安全操作，因为当super()和this()同时出现的时候，在调用完了super()之后 还会执行this()，而this()中又会自动调用super(),这就造成了调用两次super()的结果。
-- 如果你继承的父类没有无参数构造函数，那么你这个类第一句必须显示的调用super关键字,来调用父类对应的有参构造函数，否则不能通过编译。
-- https://blog.csdn.net/qq_42848910/article/details/104481271
+- super() 和 this() 均不可以在 static 环境中使用，包括：static 变量,static 方法，static 语句块。
+#### this 和 super 不能同时出现在一个构造函数里面，也必须在构造方法内第一行
+- 子类是从父类继承而来，继承了父类的属性和方法，如果在子类中先不完成父类的成员的初始化，则子类无法使用，因为在java中不允许调用没初始化的成员。在构造器中是顺序执行的，也就是说必须在第一行进行父类的初始化。而super能直接完成这个功能。This()通过调用本类中的其他构造器也能完成这个功能。
 - https://www.runoob.com/w3cnote/the-different-this-super.html
 
 
@@ -763,7 +775,7 @@ public class CreditAccount extends Account{
 - 没有显示继承任何类则默认继承JDK javaSE库中的java.Lang.object类(所有类都继承这个类)
 - Extendtest et = new Extendtest();  
   String s = et.toString();
-#### 查找类型【open type】C+S+T
+#### 查找类型【open type】C+S+T 查找类
 #### 查找资源【open resource】C+S+R 当前项目下(src)文件
 ### 方法覆盖 override (方法重写)
 - 父类中方法无法满足子类的业务需求
@@ -774,16 +786,15 @@ public class CreditAccount extends Account{
 #### 注意
 - 私有方法，构造方法没有继承 不能覆盖
 - - 覆盖只针对方法不针对属性
-#### 静态方法不存在覆盖，也就不存在多态
+#### 静态方法不存在覆盖(重写)，也就不存在多态
 - 如果子类里面定义了同名静态方法和属性，那么这时候父类的静态方法或属性称之为"隐藏"
-- https://blog.csdn.net/u010412719/article/details/49254017
-#### static方法的内存空间子类也可操作
-- Parent child=new Son();  
-  child.staticMethod();//输出：Parent staticMethod run
+- 直接调用方法区中静态方法，无需经过方法表，这也就解释了静态方法的执行只看静态类型，而与实际类型无关，
+#### static方法（变量）的内存空间子类也可操作
+- Son s = new Son();  
+  s.staticMethod();//输出：Parent staticMethod run
 
 #### 声明为static的方法有以下几条限制：
-- 它们仅能调用其他的static 方法。  
-- 它们只能访问static数据。  
+- 它们只能直接访问static数据。  
 - 它们不能以任何方式引用this 或super。
   
 ## 多态
