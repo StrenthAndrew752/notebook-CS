@@ -60,7 +60,7 @@ del *class
 - 垃圾回收机制（GC） 没有引用指向对象
 - 可移植性（跨平台） 一次编译 到处运行（从windows到linux）  java代码运行在JVM（java虚拟机），而不和操作系统追鹅交互
 ### java加载和运行
--  .java(源文件，在硬盘)-.class(编译通过则使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理) .class 可拷贝到其他操作系统执行   //javac Hw.java
+-  .java(源文件，在硬盘)-.class(编译通过则使用javac编译为字节码，检查是否符合java语法，非纯二进制不然操作系统能处理而不用JVM) .class 可拷贝到其他操作系统执行   //javac Hw.java
 -  编译只检查语法不运算 byte b = i（int 10 / 3 (错) 
 -  java.exe 运行 // A.class - java A  // JVM 类加载器(ClassLoader)-操作系统-硬件平台 \操作系统执行二进制和底层硬件平台交互
 #### javac启动编译器，java启动JVM
